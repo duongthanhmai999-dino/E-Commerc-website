@@ -1,0 +1,74 @@
+/* Khung bọc tổng: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.services-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 140px auto 140px auto; /* Tạo khoảng trống thênh thang trên dưới cho thoáng trang chủ */
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Dàn hàng ngang và chia đều khoảng cách thành 3 cột cân đối */
+.services-list {
+    display: flex;
+    justify-content: space-around; /* Căn cho 3 khối cách đều nhau vào giữa */
+    align-items: center;
+    gap: 40px;
+}
+
+/* Từng cột dịch vụ đơn lẻ */
+.service-item-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Căn giữa toàn bộ vòng tròn và chữ theo trục dọc */
+    text-align: center;
+    flex: 1;
+}
+
+/* 🟢 VÒNG TRÒN NGOÀI: Màu xám mờ mờ bao bọc */
+.outer-circle {
+    width: 80px;
+    height: 80px;
+    background-color: #bcbcbc; /* Màu xám chuẩn lớp ngoài của Figma */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px; /* Khoảng cách từ vòng tròn xuống chữ tiêu đề */
+}
+
+/* 🟢 VÒNG TRÒN TRONG: Màu đen tuyền chứa icon trắng */
+.inner-circle {
+    width: 58px;
+    height: 58px;
+    background-color: #000000; /* Màu đen tuyền chính giữa */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Icon Boxicons màu trắng rực lên trên nền đen */
+.service-icon {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+/* Tiêu đề viết hoa bôi đậm sắc nét */
+.service-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+    letter-spacing: 0.5px;
+    line-height: 120%;
+}
+
+/* Dòng mô tả nhỏ chữ mảnh lùi về sau */
+.service-desc {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+    opacity: 0.8; /* Làm mờ nhẹ chữ nhìn cho sang */
+}

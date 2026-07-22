@@ -1,0 +1,212 @@
+/* Khung tổng bọc ngoài: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.account-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh breadcrumb căn chỉnh sang hai đầu lề trang */
+.account-breadcrumb-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+
+.breadcrumb-links {
+    display: flex;
+    gap: 8px;
+}
+
+.bc-link.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.bc-link.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.bc-separator {
+    color: #000000;
+    opacity: 0.3;
+}
+
+.welcome-message {
+    color: #000000;
+}
+
+.user-name {
+    color: #db4444; /* Màu đỏ làm nổi bật tên user */
+    font-weight: 500;
+}
+
+/* Chia bố cục 2 cột chính nằm ngang */
+.account-main-layout {
+    display: flex;
+    gap: 80px; /* Khoảng cách rộng rãi giữa menu và form */
+    align-items: flex-start;
+}
+
+/* 2. CỘT MENU BÊN TRÁI */
+.account-sidebar {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.menu-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 16px 0;
+}
+
+.menu-title.single {
+    margin: 0;
+}
+
+.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-left: 20px; /* Thụt lề các mục con vào trong */
+}
+
+.menu-item {
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.5;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Nhấn đỏ mục My Profile đang chọn đúng hình */
+.menu-item.active {
+    color: #db4444;
+    opacity: 1;
+    font-weight: 500;
+}
+
+.menu-item:hover:not(.active) {
+    opacity: 1;
+}
+
+/* 3. CỘT KHUNG FORM TRẮNG BÊN PHẢI */
+.account-form-box {
+    flex: 1;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05); /* Đổ bóng mờ nhẹ 4 rìa siêu mịn */
+    border-radius: 4px;
+    padding: 40px 80px; /* Khoảng đệm rộng thênh thang bên trong hộp */
+    box-sizing: border-box;
+}
+
+.form-box-title {
+    color: #db4444; /* Tiêu đề chữ đỏ đặc trưng */
+    font-size: 20px;
+    font-weight: 500;
+    margin: 0 0 24px 0;
+}
+
+.profile-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+/* Khung chia đôi hàng ngang cho First Name/Last Name */
+.form-row-half {
+    display: flex;
+    gap: 30px;
+}
+
+.input-group {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.input-group label, .section-label {
+    font-size: 16px;
+    color: #000000;
+    font-weight: 500;
+}
+
+/* Thiết kế ô nhập thông tin màu xám nhạt */
+.profile-input {
+    width: 100%;
+    height: 50px;
+    background-color: #f5f5f5; /* Nền xám nhạt tinh tế */
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 16px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.profile-input::placeholder {
+    color: #000000;
+    opacity: 0.3;
+}
+
+.profile-input:focus {
+    outline: 1px solid #db4444; /* Đổi viền đỏ khi click vào ô */
+}
+
+/* Khối đổi mật khẩu xếp dọc đè nhau */
+.password-changes-section {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.password-changes-section .section-label {
+    margin-bottom: 8px;
+}
+
+/* Khối nút bấm dạt hẳn về góc dưới lề bên phải */
+.form-actions-wrap {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 32px;
+    margin-top: 16px;
+}
+
+.btn-cancel {
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-save {
+    background-color: #db4444; /* Nút đỏ cam bừng sáng */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.btn-save:hover {
+    background-color: #e05555;
+}

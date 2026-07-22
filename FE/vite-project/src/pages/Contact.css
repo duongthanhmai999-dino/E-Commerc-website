@@ -1,0 +1,196 @@
+/* Khung tổng bọc ngoài: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.contact-page-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh dẫn đường link nhỏ lề bên trái đỉnh trang */
+.contact-breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+
+.bc-item.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.bc-item.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.bc-separator {
+    color: #000000;
+    opacity: 0.3;
+}
+
+/* Bố cục chia 2 khối nằm ngang hàng */
+.contact-main-layout {
+    display: flex;
+    gap: 30px; /* Khoảng cách chuẩn giữa hộp trái và hộp phải */
+    align-items: stretch; /* Cho 2 chiều cao của 2 hộp bằng khít nhau */
+}
+
+/* 2. THIẾT KẾ HỘP THÔNG TIN BÊN TRÁI */
+.contact-info-sidebar {
+    width: 340px; /* Độ rộng cố định nhỏ gọn chuẩn hình */
+    background-color: #ffffff;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05); /* Đổ bóng mờ rìa siêu mịn */
+    border-radius: 4px;
+    padding: 40px 35px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.info-group-box {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.info-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+/* Vòng tròn nhỏ màu đỏ chứa icon trắng */
+.icon-red-circle {
+    width: 40px;
+    height: 40px;
+    background-color: #db4444; /* Màu đỏ thương hiệu */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 20px;
+}
+
+.info-heading {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.info-text {
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+    line-height: 140%;
+}
+
+.info-text.highlight {
+    font-weight: 500; /* Làm đậm thông số điện thoại/email */
+}
+
+/* Đường kẻ phân chia mờ ở giữa hộp trái */
+.info-divider {
+    width: 100%;
+    height: 1px;
+    background-color: #000000;
+    opacity: 0.3;
+}
+
+/* 3. THIẾT KẾ HỘP ĐIỀN FORM BÊN PHẢI */
+.contact-form-box {
+    flex: 1; /* Tự động co giãn chiếm trọn phần không gian trống còn lại */
+    background-color: #ffffff;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    padding: 40px 32px;
+    box-sizing: border-box;
+}
+
+.contact-actual-form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    height: 100%;
+}
+
+/* Hàng ngang chứa 3 ô nhập liệu */
+.form-input-row {
+    display: flex;
+    gap: 16px;
+}
+
+/* Ô nhập liệu nhỏ màu xám nhạt */
+.contact-input-field {
+    flex: 1;
+    height: 50px;
+    background-color: #f5f5f5; /* Nền xám nhạt chuẩn chỉnh */
+    border: none;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 14px;
+    color: #000000;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.contact-input-field::placeholder, .contact-textarea-field::placeholder {
+    color: #000000;
+    opacity: 0.4;
+}
+
+.contact-input-field:focus, .contact-textarea-field:focus {
+    outline: 1px solid #db4444; /* Bật viền đỏ cam khi click chuột vào ô */
+}
+
+.form-textarea-wrap {
+    flex: 1;
+    display: flex;
+}
+
+/* Ô nhập nội dung tin nhắn bự */
+.contact-textarea-field {
+    width: 100%;
+    height: 207px; /* Chiều cao rộng rãi thoải mái chuẩn hình */
+    background-color: #f5f5f5;
+    border: none;
+    border-radius: 4px;
+    padding: 16px;
+    font-size: 14px;
+    color: #000000;
+    box-sizing: border-box;
+    resize: none; /* Khóa nút kéo giãn ô để tránh vỡ giao diện */
+    font-family: 'Inter', sans-serif;
+}
+
+/* Đẩy nút submit dạt hẳn về góc dưới bên lề phải */
+.form-submit-wrap {
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Kiểu dáng nút Send Massage màu đỏ cam nổi bật */
+.contact-submit-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.contact-submit-btn:hover {
+    background-color: #e05555;
+}
+
+

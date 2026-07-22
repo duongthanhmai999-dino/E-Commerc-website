@@ -1,0 +1,131 @@
+/* Khung bọc tổng của cả mục: Ép theo mốc quy chuẩn 1280px của cô giáo */
+.category-section-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 80px auto 0 auto; /* Đẩy cách xa khối Flash Sale ở trên ra cho web thoáng */
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    border-bottom: 1px solid #e5e5e5; /* Đường kẻ ngang mờ ở dưới cùng của hình */
+    padding-bottom: 60px;
+}
+
+/* Cụm khối chữ nhật màu đỏ + chữ Categories */
+.category-sub-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.red-tag {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444;
+    border-radius: 4px;
+}
+
+.tag-text {
+    color: #db4444;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+}
+
+/* Khối tiêu đề lớn và 2 nút mũi tên xếp ngang hàng sang hai bên đầu trang */
+.category-header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.section-main-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 110%;
+}
+
+/* Cụm 2 nút mũi tên tròn */
+.nav-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.arrow-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Khối chứa 6 ô danh mục hình vuông xếp ngang hàng đều tăm tắp */
+.category-list {
+    display: flex;
+    justify-content: space-between; /* Tự động chia đều khoảng cách */
+    gap: 30px;
+}
+
+/* Kiểu dáng thông thường của 1 ô danh mục (Trắng, viền xám mảnh) */
+.category-item-card {
+    width: 170px;
+    height: 145px;
+    border: 1px solid #b3b3b3;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    background-color: #ffffff;
+    transition: all 0.25s ease;
+    cursor: pointer;
+}
+
+/* Kích thước và màu sắc của Icon bên trong */
+.category-icon {
+    font-size: 40px;
+    color: #000000;
+}
+
+/* Chữ tên danh mục */
+.category-name {
+    font-size: 16px;
+    font-weight: 300;
+    color: #000000;
+}
+
+/* 🟥 TRẠNG THÁI ACTIVE MÀU ĐỎ (Dành riêng cho ô Camera đúng như hình) */
+.category-item-card.active-card {
+    background-color: #db4444;
+    border-color: #db4444;
+}
+
+/* Khi active thì chữ và icon tự động đổi sang màu trắng cho nổi bật */
+.category-item-card.active-card .category-icon,
+.category-item-card.active-card .category-name {
+    color: #ffffff;
+}
+
+/* Hiệu ứng khi rê chuột vào các ô thường: đỏ giống hệt ô active (Camera) */
+.category-item-card:hover:not(.active-card) {
+    background-color: #db4444;
+    border-color: #db4444;
+    transform: translateY(-2px); /* Nhấc nhẹ cái ô lên 1 tí */
+}
+
+.category-item-card:hover:not(.active-card) .category-icon,
+.category-item-card:hover:not(.active-card) .category-name {
+    color: #ffffff;
+}

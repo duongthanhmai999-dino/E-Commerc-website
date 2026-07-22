@@ -1,0 +1,141 @@
+.payment-icons {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payment-icons__title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #6b6b6b;
+  white-space: nowrap;
+}
+
+.payment-icons__list {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+}
+
+.payment-icons__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 44px;
+  min-width: 76px;
+  padding: 0 14px;
+  background: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  cursor: default;
+}
+
+.payment-icons__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
+}
+
+.payment-icons__logo {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Bkash */
+.payment-icons__bkash-text {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #e2136e;
+  letter-spacing: -0.3px;
+}
+
+.payment-icons__b-low {
+  color: #1a1a1a;
+}
+
+.payment-icons__bkash-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  background: #e2136e;
+  border-radius: 4px;
+}
+
+/* Visa */
+.payment-icons__visa-text {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  font-style: italic;
+  color: #1a1f71;
+  letter-spacing: 1px;
+}
+
+/* MasterCard */
+.payment-icons__mc-circles {
+  position: relative;
+  display: flex;
+  width: 34px;
+  height: 20px;
+}
+
+.payment-icons__mc-circle {
+  position: absolute;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
+
+.payment-icons__mc-circle--red {
+  left: 0;
+  background: #eb001b;
+}
+
+.payment-icons__mc-circle--yellow {
+  left: 14px;
+  background: #f79e1b;
+  mix-blend-mode: multiply;
+}
+
+.payment-icons__mc-text {
+  display: none;
+}
+
+/* Nagad */
+.payment-icons__nagad-icon {
+  flex-shrink: 0;
+}
+
+.payment-icons__nagad-text {
+  font-family: "Noto Sans Bengali", Arial, sans-serif;
+  font-size: 18px;
+  font-weight: 700;
+  color: #f26522;
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+  .payment-icons__list {
+    gap: 10px;
+  }
+
+  .payment-icons__item {
+    height: 38px;
+    min-width: 64px;
+    padding: 0 10px;
+  }
+
+  .payment-icons__visa-text {
+    font-size: 18px;
+  }
+}

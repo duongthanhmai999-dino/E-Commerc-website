@@ -1,0 +1,254 @@
+/* Khung bọc tổng: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.about-page-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh breadcrumb nhỏ trên đỉnh lề trái */
+.about-breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+
+.bc-text.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.bc-text.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.bc-slash {
+    color: #000000;
+    opacity: 0.3;
+}
+
+/* 2. THIẾT KẾ KHỐI GIỚI THIỆU: CHỮ VÀ ẢNH TRÀN RÌA BÊN PHẢI */
+.about-intro-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 140px;
+}
+
+.about-intro-left {
+    flex: 1;
+    max-width: 525px;
+}
+
+.intro-title {
+    font-size: 54px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0 0 40px 0;
+    letter-spacing: 2px;
+}
+
+.intro-paragraph {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    line-height: 1.6;
+    margin: 0 0 24px 0;
+}
+
+.about-intro-right {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.intro-main-img {
+    width: 100%;
+    max-width: 705px;
+    height: 609px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+/* 3. KHỐI 4 Ô THỐNG KÊ CHIA ĐỀU NẰM NGANG */
+.about-stats-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 140px;
+}
+
+/* Kiểu dáng ô thường (Nền trắng, viền mảnh, đổ bóng nhẹ) */
+.stat-card-item {
+    width: 270px;
+    height: 230px;
+    border: 1px solid #b3b3b3;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    transition: all 0.25s ease;
+}
+
+/* Lồng 2 lớp vòng tròn icon đổ bóng trắng đen */
+.stat-icon-outer {
+    width: 80px;
+    height: 80px;
+    background-color: #bcbcbc;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 24px;
+}
+
+.stat-icon-inner {
+    width: 58px;
+    height: 58px;
+    background-color: #000000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stat-icon {
+    font-size: 32px;
+    color: #ffffff;
+}
+
+.stat-value {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.stat-label {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+    text-align: center;
+}
+
+/* 🟥 TRẠNG THÁI ACTIVE ĐỔ MÀU NỀN ĐỎ CHO Ô SỐ 2 */
+.stat-card-item.active-stat {
+    background-color: #db4444;
+    border-color: #db4444;
+    box-shadow: 0px 10px 20px rgba(219, 68, 68, 0.2);
+}
+
+.stat-card-item.active-stat .stat-icon-outer {
+    background-color: rgba(255, 255, 255, 0.3); /* Đổi vòng tròn ngoài thành trắng mờ */
+}
+
+.stat-card-item.active-stat .stat-icon-inner {
+    background-color: #ffffff; /* Đổi vòng tròn trong thành trắng muốt */
+}
+
+.stat-card-item.active-stat .stat-icon {
+    color: #db4444; /* Đổi màu icon thành đỏ */
+}
+
+.stat-card-item.active-stat .stat-value,
+.stat-card-item.active-stat .stat-label {
+    color: #ffffff; /* Đổi toàn bộ chữ thành trắng */
+}
+
+/* 4. KHỐI 3 THỂ NHÂN SỰ ĐỨNG CẠNH NHAU */
+.about-team-list {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.team-card-item {
+    width: 370px; /* Khớp khít tỉ lệ khung hình 370x430 của Figma */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+/* Hộp xám nhạt bọc trọn bức ảnh chân dung */
+.team-img-box {
+    width: 100%;
+    height: 430px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    display: flex;
+    align-items: flex-end; /* Cho chân ảnh chạm sát đáy hộp */
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 32px;
+}
+
+.team-member-img {
+    max-width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member-name {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+}
+
+.team-member-role {
+    font-size: 16px;
+    color: #000000;
+    opacity: 0.5;
+    margin: 0 0 16px 0;
+}
+
+/* Cụm 3 nút icon liên kết mạng xã hội dưới chân tên */
+.team-social-links {
+    display: flex;
+    gap: 16px;
+}
+
+.social-icon-link {
+    color: #000000;
+    font-size: 24px;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.social-icon-link:hover {
+    color: #db4444; /* Đổi sang đỏ khi rà chuột */
+}
+
+/* 5. CỤM 5 DẤU CHẤM TRÒN SLIDER Ở GÓC DƯỚI ĐÁY CÙNG */
+.about-slider-dots {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 40px;
+}
+
+.slide-dot {
+    width: 12px;
+    height: 12px;
+    background-color: #bcbcbc;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* Dấu chấm số 3 màu đỏ bọc vòng viền đen cực kỳ chi tiết theo hình */
+.slide-dot.active {
+    background-color: #db4444;
+    outline: 2px solid #000000;
+    outline-offset: 2px;
+}

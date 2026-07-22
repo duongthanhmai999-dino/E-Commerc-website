@@ -1,0 +1,219 @@
+/* Khung tổng ép theo đúng mốc 1280px quy chuẩn */
+.jfy-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 80px auto 100px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Hàng tiêu đề + nút See All đẩy sang 2 bên */
+.jfy-header-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.jfy-sub-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.jfy-red-tag {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444;
+    border-radius: 4px;
+}
+
+.jfy-tag-text {
+    color: #000000;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+}
+
+.jfy-see-all-btn {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 500;
+    border: 1px solid #b3b3b3;
+    border-radius: 4px;
+    padding: 14px 24px;
+    cursor: pointer;
+    transition: border-color 0.2s ease;
+}
+
+.jfy-see-all-btn:hover {
+    border-color: #000000;
+}
+
+/* Lưới 4 card sản phẩm */
+.jfy-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+}
+
+.jfy-card {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Khung hình vuông chứa ảnh nền xám nhạt */
+.jfy-image-box {
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.jfy-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Nhãn giảm giá đỏ góc trên bên trái */
+.jfy-discount-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #db4444;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Nhãn NEW xanh lá góc trên bên trái */
+.jfy-new-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #00ff66;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Nút con mắt xem nhanh góc trên bên phải */
+.jfy-icon-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Thanh Add To Cart đen, ẩn sẵn, chỉ hiện khi hover vào card */
+.jfy-add-to-cart-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 10px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.jfy-card:hover .jfy-add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Khối chữ thông tin phía dưới */
+.jfy-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.jfy-name {
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0;
+}
+
+.jfy-price-box {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.jfy-new-price {
+    color: #db4444;
+}
+
+.jfy-old-price {
+    color: #000000;
+    opacity: 0.5;
+    text-decoration: line-through;
+}
+
+.jfy-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.jfy-stars {
+    color: #ffad33;
+    font-size: 16px;
+    display: flex;
+    gap: 4px;
+}
+
+.jfy-stars .bx-star {
+    color: #d1d1d1;
+}
+
+.jfy-rating-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    opacity: 0.5;
+}
+
+@media (max-width: 900px) {
+    .jfy-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

@@ -1,0 +1,215 @@
+:root {
+  --pc-ink: #16181d;
+  --pc-muted: #8a8f98;
+  --pc-price: #d0393a;
+  --pc-old-price: #b3b7c0;
+  --pc-star: #ffa41c;
+  --pc-star-empty: #e2e4e9;
+  --pc-surface: #ffffff;
+  --pc-surface-alt: #f6f6f8;
+  --pc-border: #ececef;
+  --pc-badge-new: #37c47a;
+  --pc-badge-discount: #e64545;
+  --pc-overlay: #16181d;
+  --pc-radius: 6px;
+  --pc-transition: 180ms ease;
+}
+
+.pc-card {
+  width: 100%;
+  max-width: 220px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
+    sans-serif;
+  color: var(--pc-ink);
+}
+
+.pc-media {
+  position: relative;
+  background: var(--pc-surface-alt);
+  border-radius: var(--pc-radius);
+  overflow: hidden;
+  aspect-ratio: 1 / 1;
+}
+
+.pc-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 18px;
+  display: block;
+  transition: transform var(--pc-transition);
+}
+
+.pc-card:hover .pc-image {
+  transform: scale(1.03);
+}
+
+.pc-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  color: #fff;
+  padding: 3px 8px;
+  border-radius: 3px;
+  line-height: 1.4;
+}
+
+.pc-badge--new {
+  background: var(--pc-badge-new);
+}
+
+.pc-badge--discount {
+  background: var(--pc-badge-discount);
+}
+
+.pc-icon-stack {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.pc-icon-btn {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: none;
+  background: var(--pc-surface);
+  color: var(--pc-ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 1px 3px rgba(20, 20, 30, 0.12);
+  transition: background var(--pc-transition), color var(--pc-transition),
+    transform var(--pc-transition);
+}
+
+.pc-icon-btn:hover {
+  transform: translateY(-1px);
+}
+
+.pc-icon-btn.is-active {
+  background: var(--pc-price);
+  color: #fff;
+}
+
+.pc-add-overlay {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  height: 34px;
+  border: none;
+  background: var(--pc-overlay);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  cursor: pointer;
+  transform: translateY(100%);
+  transition: transform var(--pc-transition);
+}
+
+.pc-card:hover .pc-add-overlay,
+.pc-card:focus-within .pc-add-overlay {
+  transform: translateY(0);
+}
+
+.pc-add-overlay:hover {
+  background: #000;
+}
+
+.pc-body {
+  padding-top: 10px;
+}
+
+.pc-title {
+  margin: 0 0 4px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--pc-ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.pc-price-row {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-bottom: 4px;
+}
+
+.pc-price {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--pc-price);
+}
+
+.pc-old-price {
+  font-size: 12px;
+  color: var(--pc-old-price);
+  text-decoration: line-through;
+}
+
+.pc-rating {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 6px;
+}
+
+.pc-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: var(--pc-star-empty);
+}
+
+.pc-star.is-filled {
+  color: var(--pc-star);
+}
+
+.pc-review-count {
+  font-size: 11px;
+  color: var(--pc-muted);
+}
+
+.pc-swatches {
+  display: flex;
+  gap: 6px;
+}
+
+.pc-swatch {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 1px solid var(--pc-border);
+  cursor: pointer;
+  padding: 0;
+  box-shadow: 0 0 0 1px transparent;
+  transition: box-shadow var(--pc-transition);
+}
+
+.pc-swatch.is-active {
+  box-shadow: 0 0 0 2px var(--pc-surface), 0 0 0 3px var(--pc-ink);
+}
+
+@media (max-width: 480px) {
+  .pc-card {
+    max-width: 100%;
+  }
+}

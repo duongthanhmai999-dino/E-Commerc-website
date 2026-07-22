@@ -1,0 +1,288 @@
+/* Khung bọc ngoài cùng: Giữ đúng mốc 1280px của cô giáo */
+.flash-sale-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 130px auto 0 auto; /* Cách cái banner iPhone ở trên ra cho thoáng */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Cụm tiêu đề xếp hàng ngang và căn giữa theo chiều dọc */
+.section-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px; /* Khoảng cách chuẩn giữa khối đỏ và chữ */
+}
+
+/* Khối hình chữ nhật màu đỏ - Fix cứng theo Figma */
+.red-rectangle {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444; /* Màu đỏ chuẩn thương hiệu */
+    border-radius: 4px; /* Bo tròn nhẹ 4 góc cho mượt */
+}
+
+/* Dòng chữ Today's chỉnh phông Inter sang xịn */
+.title-text {
+    color: #db4444;
+    font-weight: 600;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+}
+
+/* Khung chứa bọc ngoài: Xếp hàng ngang và căn giữa theo chiều dọc */
+.flash-sale-header-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 87px;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    margin-top: 24px;
+}
+
+/* Kiểu dáng chữ Tiêu đề lớn Flash Sales */
+.main-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 110%;
+}
+
+/* Toàn bộ cụm đồng hồ chứa các khối số */
+.countdown-container {
+    display: flex;
+    align-items: flex-end;
+    gap: 17px; /* Khoảng cách giữa khối số và dấu hai chấm */
+}
+
+/* Từng cột chứa nhãn chữ nhỏ ở trên và số bự ở dưới */
+.time-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px; /* Khoảng cách từ chữ nhỏ xuống số bự */
+}
+
+/* Nhãn chữ nhỏ ở trên (Days, Hours...) */
+.time-label {
+    font-size: 12px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Số hiển thị thời gian bự ở dưới */
+.time-number {
+    font-size: 32px;
+    font-weight: 700;
+    color: #000000;
+    line-height: 100%;
+    letter-spacing: 1px;
+}
+
+/* Dấu hai chấm phân cách màu hồng đỏ cam */
+.time-colon {
+    font-size: 32px;
+    font-weight: 700;
+    color: #e07575; /* Màu chuẩn hồng đỏ nhạt của dấu hai chấm trên Figma */
+    line-height: 100%;
+    padding-bottom: 4px; /* Nhếch nhẹ dấu hai chấm lên giữa dòng số */
+}
+
+/* Dãy card sản phẩm: canh bằng với Today's / Flash Sales phía trên, nằm dưới đồng hồ */
+.product-list {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    display: flex;
+    gap: 20px;
+}
+
+/* Khung tổng của cả cái Card sản phẩm */
+.product-card {
+    width: 270px; /* Độ rộng chuẩn của 1 cái Card trên Figma */
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 16px; /* Khoảng cách giữa khối ảnh và khối chữ */
+}
+
+/* Khung hình vuông chứa ảnh nền màu xám nhạt */
+.image-box {
+    width: 100%;
+    height: 250px;
+    background-color: #f5f5f5; /* Màu nền xám nhạt của Figma */
+    border-radius: 4px;
+    position: relative; /* Giúp cố định các nút tim, nhãn sale đè lên ảnh */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Ảnh sản phẩm nằm chính giữa */
+.product-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Thanh "Add To Cart" màu đen, ẩn sẵn, chỉ hiện khi hover vào card */
+.add-to-cart-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.product-card:hover .add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Nhãn -40% màu đỏ nằm góc trên bên trái */
+.discount-tag {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #db4444; /* Màu đỏ chuẩn */
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Cụm nút Trái tim và Con mắt nằm dọc bên phải */
+.action-buttons {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Kiểu dáng hình tròn của nút Trái tim / Con mắt */
+.icon-btn {
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%; /* Biến thành hình tròn */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Khối thông tin chữ phía dưới */
+.info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Tên sản phẩm màu đen đậm đà */
+.product-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+}
+
+/* Khung chứa 2 loại giá tiền xếp ngang */
+.price-box {
+    display: flex;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Giá mới màu đỏ */
+.new-price {
+    color: #db4444;
+}
+
+/* Giá cũ màu xám và có gạch ngang ở giữa */
+.old-price {
+    color: #000000;
+    opacity: 0.5;
+    text-decoration: line-through; /* Lệnh gạch ngang chữ */
+}
+
+/* Khối chứa sao và số lượng đánh giá */
+.rating-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+/* Màu vàng cam chuẩn của các ngôi sao đánh giá */
+.stars {
+    color: #ffad33;
+    font-size: 16px;
+    display: flex;
+    gap: 4px;
+}
+
+/* Sao rỗng (chưa đạt) chuyển sang màu xám nhạt */
+.stars .bx-star {
+    color: #d1d1d1;
+}
+
+/* Số lượng (88) màu xám nhạt */
+.rating-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    opacity: 0.5;
+}
+
+/* Khung bọc nút View All Products, căn giữa toàn bộ chiều ngang */
+.view-all-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Nút View All Products màu đỏ chuẩn thương hiệu */
+.view-all-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.view-all-btn:hover {
+    opacity: 0.85;
+}

@@ -1,0 +1,254 @@
+/* Khung bọc tổng: giữ đúng mốc 1280px như các mục khác */
+.our-products-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 80px auto 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Cụm khối chữ nhật đỏ + chữ Our Products */
+.our-products-sub-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.our-products-red-tag {
+    width: 20px;
+    height: 40px;
+    background-color: #db4444;
+    border-radius: 4px;
+}
+
+.our-products-tag-text {
+    color: #db4444;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 100%;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề lớn + 2 nút mũi tên đẩy sang 2 bên */
+.our-products-header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+}
+
+.our-products-title {
+    font-size: 30px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+    letter-spacing: 1px;
+    line-height: 110%;
+}
+
+/* Cụm 2 nút mũi tên tròn */
+.our-products-nav-arrows {
+    display: flex;
+    gap: 8px;
+}
+
+.our-products-arrow-btn {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    background-color: #f5f5f5;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Lưới 8 card sản phẩm: 4 cột x 2 hàng */
+.our-products-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 270px);
+    gap: 30px;
+}
+
+.our-products-card {
+    width: 270px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+/* Khung hình vuông chứa ảnh nền xám nhạt */
+.our-products-image-box {
+    width: 270px;
+    height: 250px;
+    background-color: #f5f5f5;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.our-products-img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+/* Nhãn NEW màu xanh lá góc trên bên trái */
+.our-products-new-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background-color: #00ff66;
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 500;
+    padding: 4px 12px;
+    border-radius: 4px;
+}
+
+/* Cụm nút Trái tim và Con mắt góc trên bên phải */
+.our-products-action-buttons {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.our-products-icon-btn {
+    width: 34px;
+    height: 34px;
+    background-color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    color: #000000;
+}
+
+/* Thanh Add To Cart màu đen, ẩn sẵn, chỉ hiện khi hover vào card */
+.our-products-add-to-cart-btn {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-align: center;
+    padding: 8px 0;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.our-products-card:hover .our-products-add-to-cart-btn {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Khối chữ thông tin phía dưới */
+.our-products-info-box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.our-products-name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #000000;
+    margin: 0;
+}
+
+.our-products-price {
+    font-size: 16px;
+    font-weight: 600;
+    color: #db4444;
+}
+
+.our-products-rating-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.our-products-stars {
+    color: #ffad33;
+    font-size: 16px;
+    display: flex;
+    gap: 4px;
+}
+
+.our-products-stars .bx-star {
+    color: #d1d1d1;
+}
+
+.our-products-rating-count {
+    font-size: 14px;
+    font-weight: 600;
+    color: #000000;
+    opacity: 0.5;
+}
+
+/* Hàng chấm tròn màu (biến thể sản phẩm) */
+.our-products-color-swatches {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 4px;
+}
+
+.our-products-color-dot {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+}
+
+.our-products-color-dot--active {
+    box-shadow: 0 0 0 1px #ffffff, 0 0 0 2px currentColor;
+    outline: 1px solid #b3b3b3;
+    outline-offset: 2px;
+}
+
+/* Khung bọc nút View All Products, căn giữa toàn bộ chiều ngang */
+.our-products-view-all-wrap {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+.our-products-view-all-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 48px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.our-products-view-all-btn:hover {
+    opacity: 0.85;
+}

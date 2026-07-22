@@ -1,0 +1,76 @@
+/* Khung tổng bọc ngoài: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.error-page-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 140px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh dẫn đường link nhỏ lề bên trái đỉnh trang */
+.error-breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 120px; /* Khoảng cách thênh thang xuống khối chữ bự */
+}
+
+.error-breadcrumb .bc-item.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.error-breadcrumb .bc-item.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.error-breadcrumb .bc-separator {
+    color: #000000;
+    opacity: 0.3;
+}
+
+/* 📊 KHỐI NỘI DUNG: Ép căn giữa tuyệt đối mọi phần tử */
+.error-content-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+/* Chữ 404 Not Found siêu bự nét căng chuẩn hình */
+.error-code-title {
+    font-size: 110px; /* Kích thước khổng lồ làm điểm nhấn */
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 40px 0;
+    letter-spacing: 3px;
+    line-height: 100%;
+}
+
+/* Dòng dòng mô tả nhỏ chữ mảnh */
+.error-desc-text {
+    font-size: 16px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0 0 80px 0; /* Đẩy cái nút đỏ xuống dưới thoáng mắt */
+}
+
+/* Kiểu dáng nút Back to home page màu đỏ cam nổi bật */
+.back-home-btn {
+    display: inline-block;
+    background-color: #db4444; /* Màu đỏ chuẩn thương hiệu */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 48px; /* Độ rộng dài chuẩn chỉnh của nút */
+    text-decoration: none; /* Xóa gạch chân mặc định của thẻ Link */
+    border-radius: 4px; /* Bo tròn nhẹ 4 góc */
+    transition: background-color 0.2s ease;
+}
+
+/* Hiệu ứng khi rà chuột vào nút nhìn mượt mà chuyên nghiệp */
+.back-home-btn:hover {
+    background-color: #e05555;
+}

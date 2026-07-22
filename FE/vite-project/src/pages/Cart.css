@@ -1,0 +1,267 @@
+/* Khung tổng bọc ngoài: Ép theo mốc mốt 1280px quy chuẩn của cô giáo */
+.cart-page-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 80px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Thanh breadcrumb nhỏ trên đỉnh trang */
+.cart-breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+
+.bc-item.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.bc-item.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.bc-slash {
+    color: #000000;
+    opacity: 0.3;
+}
+
+/* Công thức chia tỉ lệ % độ rộng cho các cột nằm ngang của bảng */
+.col-prod { width: 40%; display: flex; align-items: center; }
+.col-price { width: 20%; }
+.col-qty { width: 20%; }
+.col-sub { width: 20%; text-align: right; }
+
+/* 2. THIẾT KẾ CÁC HÀNG BẢNG ĐỔ BÓNG MỜ SIÊU MỊN CHUẨN FIGMA */
+.cart-table {
+    display: flex;
+    flex-direction: column;
+    gap: 40px; /* Khoảng cách thưa thoáng giữa hàng trên và hàng dưới */
+}
+
+/* Hàng tiêu đề trên cùng của bảng */
+.cart-table-header {
+    width: 100%;
+    height: 72px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05); /* Đổ bóng mờ nhẹ rìa */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-weight: 500;
+    color: #000000;
+}
+
+/* Từng hàng sản phẩm đơn lẻ bọc trong hộp trắng */
+.cart-table-row {
+    width: 100%;
+    height: 102px;
+    background-color: #ffffff;
+    box-shadow: 0px 1px 13px rgba(0, 0, 0, 0.05);
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    padding: 0 40px;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: #000000;
+}
+
+/* Khung hình vuông chứa ảnh sản phẩm */
+.cart-img-wrap {
+    width: 54px;
+    height: 54px;
+    position: relative;
+    margin-right: 20px;
+}
+
+.cart-item-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* Nút tròn đỏ dấu nhân nhỏ gài đè lên góc trái để xóa sản phẩm */
+.remove-item-badge {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    width: 18px;
+    height: 18px;
+    background-color: #db4444; /* Màu đỏ chuẩn */
+    color: #ffffff;
+    font-size: 12px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 700;
+    z-index: 5;
+}
+
+.cart-item-name {
+    font-weight: 400;
+}
+
+.price-cell, .subtotal-cell {
+    font-weight: 400;
+}
+
+/* Ô khung nhập số lượng có hai nút mũi tên lồng viền */
+.qty-input-box {
+    width: 72px;
+    height: 44px;
+    border: 1.5px solid #b3b3b3; /* Viền xám mảnh */
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+.qty-num {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.qty-arrows-wrap {
+    display: flex;
+    flex-direction: column;
+    font-size: 8px;
+    color: #000000;
+    cursor: pointer;
+    gap: 4px;
+}
+
+/* 3. HÀNG HAI NÚT BẤM CĂN SANG HAI BÊN ĐẦU TRANG TRỐNG */
+.cart-actions-row {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 24px;
+    margin-bottom: 80px;
+}
+
+.cart-outline-btn {
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000; /* Viền đen thủ công */
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 48px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s ease;
+}
+
+.cart-outline-btn:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+/* 4. PHẦN BỐ CỤC ĐÁY TRANG CHIA HAI BÊN ĐẦU XA NHAU */
+.cart-bottom-layout {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* Khối nhập mã giảm giá lề bên trái */
+.coupon-box-wrap {
+    display: flex;
+    gap: 16px;
+}
+
+.coupon-input {
+    width: 300px;
+    height: 56px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 0 24px;
+    font-size: 16px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+.coupon-apply-btn {
+    background-color: #db4444; /* Nút đỏ nổi bật */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 0 48px;
+    height: 56px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.coupon-apply-btn:hover {
+    background-color: #e05555;
+}
+
+/* Hộp Cart Total viền đen vuông vắn, chắc chắn bên phải lề trang */
+.cart-total-box {
+    width: 470px;
+    border: 1.5px solid #000000; /* Viền đen dày dặn chuẩn hình */
+    border-radius: 4px;
+    padding: 32px 24px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.total-box-title {
+    font-size: 20px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 24px 0;
+}
+
+.total-row-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #000000;
+    padding-bottom: 16px;
+    margin-bottom: 16px;
+    border-bottom: 1px solid #b3b3b3; /* Đường gạch mờ kẻ ngang phân cách */
+}
+
+/* Hàng tính tổng số tiền chốt hạ dưới cùng ko có gạch ngang */
+.total-row-item.total-final {
+    border-bottom: none;
+    margin-bottom: 24px;
+    padding-bottom: 0;
+}
+
+/* Nút bấm chuyển sang thanh toán màu đỏ cam nằm chính giữa hộp */
+.checkout-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 16px 0;
+    width: 260px;
+    margin: 0 auto; /* Đẩy căn nút nằm chính giữa cái hộp */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+    transition: background-color 0.2s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #e05555;
+}

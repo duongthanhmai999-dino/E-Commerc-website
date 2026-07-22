@@ -1,0 +1,27 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #FFFFFF;
+  color: #000000;
+  font-family: 'Poppins', sans-serif;
+   /* 2. THẦN CHÚ: Khử răng cưa giúp nét chữ mượt mà, mảnh mai chuẩn Retina */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    /* 3. Tối ưu hóa việc render chữ, giúp các khoảng bo tròn của chữ mượt hơn */
+    text-rendering: optimizeLegibility;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}

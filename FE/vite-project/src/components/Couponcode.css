@@ -1,0 +1,60 @@
+.coupon-code {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+}
+
+.coupon-code__input {
+  flex: 1;
+  height: 56px;
+  padding: 0 24px;
+  font-size: 18px;
+  color: #1a1a1a;
+  background: transparent;
+  border: 1.5px solid #000000;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.15s ease;
+}
+
+.coupon-code__input::placeholder {
+  color: #6b6b6b;
+}
+
+.coupon-code__input:focus {
+  border-color: #cd4545;
+}
+
+.coupon-code__button {
+  flex-shrink: 0;
+  height: 56px;
+  padding: 0 40px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #cd4545;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.coupon-code__button:hover {
+  background: #b93d3d;
+}
+
+.coupon-code__button:active {
+  transform: scale(0.98);
+}
+
+@media (max-width: 480px) {
+  .coupon-code {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .coupon-code__input,
+  .coupon-code__button {
+    width: 100%;
+  }
+}

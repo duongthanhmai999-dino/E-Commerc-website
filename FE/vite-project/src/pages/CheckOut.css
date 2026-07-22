@@ -1,0 +1,333 @@
+.checkout-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 40px auto 100px auto;
+    padding: 0 20px;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Breadcrumb */
+.checkout-breadcrumb {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    margin-bottom: 60px;
+}
+
+.checkout-breadcrumb .bc-item.muted {
+    color: #000000;
+    opacity: 0.5;
+}
+
+.checkout-breadcrumb .bc-item.active {
+    color: #000000;
+    font-weight: 500;
+}
+
+.checkout-breadcrumb .bc-slash {
+    color: #000000;
+    opacity: 0.3;
+}
+
+/* Bố cục 2 cột: form bên trái, tóm tắt đơn hàng bên phải */
+.checkout-layout {
+    display: flex;
+    justify-content: space-between;
+    gap: 100px;
+}
+
+.checkout-form-box {
+    flex: 1;
+    max-width: 470px;
+}
+
+.checkout-title {
+    font-size: 32px;
+    font-weight: 500;
+    color: #000000;
+    margin: 0 0 40px 0;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.checkout-field {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.checkout-field label {
+    font-size: 14px;
+    color: #000000;
+    opacity: 0.6;
+}
+
+.checkout-field .required {
+    color: #db4444;
+    opacity: 1;
+    margin-left: 2px;
+}
+
+.checkout-field input {
+    height: 50px;
+    background-color: #f5f5f5;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+    transition: border-color 0.2s ease;
+}
+
+.checkout-field input:focus {
+    border-color: #db4444;
+}
+
+/* Checkbox "Save this information" */
+.checkout-checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #000000;
+    cursor: pointer;
+    margin-top: 8px;
+}
+
+.checkout-checkbox-row input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkout-checkbox-fake {
+    width: 24px;
+    height: 24px;
+    background-color: #db4444;
+    border-radius: 2px;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.checkout-checkbox-row input:checked + .checkout-checkbox-fake::after {
+    content: '';
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 6px;
+    height: 11px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+/* Khối tóm tắt đơn hàng bên phải */
+.checkout-summary-box {
+    flex: 1;
+    max-width: 470px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 8px;
+}
+
+.checkout-order-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkout-order-product {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    color: #000000;
+}
+
+.checkout-order-img {
+    width: 50px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.checkout-order-price {
+    font-size: 16px;
+    color: #000000;
+}
+
+.checkout-total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 16px;
+    color: #000000;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #b3b3b3;
+}
+
+.checkout-total-row.checkout-total-final {
+    border-bottom: none;
+    font-weight: 500;
+}
+
+/* Hàng phương thức thanh toán */
+.checkout-payment-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    row-gap: 12px;
+}
+
+/* Thu nhỏ icon thanh toán riêng trong khung checkout cho vừa 1 hàng */
+.checkout-payment-row .payment-icons {
+    gap: 8px;
+}
+
+.checkout-payment-row .payment-icons__list {
+    gap: 8px;
+}
+
+.checkout-payment-row .payment-icons__item {
+    height: 32px;
+    min-width: 0;
+    padding: 0 8px;
+}
+
+.checkout-payment-row .payment-icons__visa-text {
+    font-size: 15px;
+}
+
+.checkout-payment-row .payment-icons__bkash-text {
+    font-size: 13px;
+}
+
+.checkout-payment-row .payment-icons__nagad-text {
+    font-size: 13px;
+}
+
+.checkout-payment-row .payment-icons__bkash-badge {
+    width: 16px;
+    height: 16px;
+}
+
+.checkout-payment-row .payment-icons__mc-circles {
+    width: 26px;
+    height: 16px;
+}
+
+.checkout-payment-row .payment-icons__mc-circle {
+    width: 16px;
+    height: 16px;
+}
+
+.checkout-payment-row .payment-icons__mc-circle--yellow {
+    left: 10px;
+}
+
+.checkout-radio-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 16px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.checkout-radio-row input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.checkout-radio-fake {
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #000000;
+    border-radius: 50%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.checkout-radio-row input:checked + .checkout-radio-fake::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 10px;
+    height: 10px;
+    background-color: #000000;
+    border-radius: 50%;
+}
+
+/* Ô nhập mã giảm giá */
+.checkout-coupon-row {
+    display: flex;
+    gap: 16px;
+}
+
+.checkout-coupon-input {
+    flex: 1;
+    height: 50px;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    padding: 0 16px;
+    font-size: 14px;
+    font-family: 'Inter', sans-serif;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.checkout-coupon-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.checkout-coupon-btn:hover {
+    opacity: 0.85;
+}
+
+/* Nút Place Order */
+.checkout-place-order-btn {
+    background-color: #db4444;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 4px;
+    padding: 16px 48px;
+    width: fit-content;
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.checkout-place-order-btn:hover {
+    opacity: 0.85;
+}
+
+@media (max-width: 900px) {
+    .checkout-layout {
+        flex-direction: column;
+        gap: 60px;
+    }
+    .checkout-form-box,
+    .checkout-summary-box {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,136 @@
+/* Khung bọc ngoài cùng: Ép theo mốc 1280px quy chuẩn của cô giáo */
+.promo-banner-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 46px auto 0 auto; /* Đẩy cách xa khối Best Selling ở trên */
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+/* Toàn bộ ruột cái hộp Banner: Đổ màu đen tuyền sang trọng */
+.promo-banner-content {
+    width: 1170px;
+    max-width: 100%;
+    height: 450px;
+    background-color: #000000; /* Màu nền đen chuẩn đét */
+    border-radius: 4px; /* Bo nhẹ góc nhẹ nhàng */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 56px 57px; /* Tạo khoảng trống an toàn bên trong hộp */
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+    overflow: hidden;
+}
+
+/* Bố cục khối chữ bên trái */
+.promo-left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    max-width: 50%;
+}
+
+/* Chữ Categories màu xanh lá sáng rực */
+.promo-category-tag {
+    color: #00ff66; /* Màu xanh lá chuẩn neon của Figma */
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 32px;
+    letter-spacing: 0.5px;
+}
+
+/* Tiêu đề lớn màu trắng bự, nét căng */
+.promo-main-heading {
+    color: #ffffff;
+    font-size: 48px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 32px 0;
+    letter-spacing: 1px;
+}
+
+/* Cụm 4 vòng tròn đếm ngược nằm hàng ngang */
+.promo-countdown-wrap {
+    display: flex;
+    gap: 24px; /* Khoảng cách giữa các vòng tròn */
+    margin-bottom: 40px;
+}
+
+/* Kiểu dáng từng vòng tròn màu trắng */
+.circle-time-item {
+    width: 62px;
+    height: 62px;
+    background-color: #ffffff; /* Nền trắng muốt */
+    border-radius: 50%; /* Biến thành hình tròn xịn đét */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+}
+
+/* Số bự bên trong vòng tròn */
+.circle-num {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 100%;
+}
+
+/* Chữ nhỏ (Hours, Days...) nằm dưới số */
+.circle-text {
+    font-size: 11px;
+    font-weight: 400;
+    margin-top: 2px;
+}
+
+/* Nút bấm Buy Now màu xanh neon bóng bẩy */
+.promo-buy-btn {
+    background-color: #00ff66; /* Màu nền xanh rực rỡ */
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 48px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+/* Hiệu ứng di chuột nhẹ nhàng nhấp nháy cho nút */
+.promo-buy-btn:hover {
+    background-color: #00dd55; /* Đậm màu lại một tí khi hover */
+    box-shadow: 0 0 15px rgba(0, 255, 102, 0.4); /* Tỏa hào quang nhẹ */
+}
+
+/* Khối đựng hình ảnh loa JBL bên phải */
+.promo-right-side {
+    position: relative;
+    max-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Quầng sáng trắng mờ toả ra phía sau loa */
+.promo-right-side::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    aspect-ratio: 1 / 1;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Định vị hình ảnh tự co giãn chuẩn size 600x420 trên Figma */
+.promo-product-img {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
