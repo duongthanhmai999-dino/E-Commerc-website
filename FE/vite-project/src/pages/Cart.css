@@ -75,6 +75,16 @@
     color: #000000;
 }
 
+/* Thông báo hiện khi giỏ hàng chưa có sản phẩm nào */
+.cart-empty-message {
+    width: 100%;
+    padding: 60px 0;
+    text-align: center;
+    font-size: 16px;
+    color: #000000;
+    opacity: 0.5;
+}
+
 /* Khung hình vuông chứa ảnh sản phẩm */
 .cart-img-wrap {
     width: 54px;

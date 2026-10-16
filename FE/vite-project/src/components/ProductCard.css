@@ -15,93 +15,88 @@
   --pc-transition: 180ms ease;
 }
 
+/* Khung tổng của cả cái Card sản phẩm */
 .pc-card {
-  width: 100%;
-  max-width: 220px;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Roboto,
-    sans-serif;
+  width: 270px; /* Độ rộng chuẩn của 1 cái Card trên Figma */
+  font-family: 'Inter', sans-serif;
   color: var(--pc-ink);
 }
 
+/* Khung hình vuông chứa ảnh nền màu xám nhạt */
 .pc-media {
-  position: relative;
-  background: var(--pc-surface-alt);
-  border-radius: var(--pc-radius);
-  overflow: hidden;
-  aspect-ratio: 1 / 1;
-}
-
-.pc-image {
   width: 100%;
-  height: 100%;
+  height: 250px;
+  background-color: #f5f5f5; /* Màu nền xám nhạt của Figma */
+  border-radius: 4px;
+  position: relative; /* Giúp cố định các nút tim, nhãn sale đè lên ảnh */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+/* Ảnh sản phẩm nằm chính giữa */
+.pc-image {
+  max-width: 80%;
+  max-height: 80%;
   object-fit: contain;
-  padding: 18px;
   display: block;
-  transition: transform var(--pc-transition);
 }
 
-.pc-card:hover .pc-image {
-  transform: scale(1.03);
-}
-
+/* Nhãn -40% màu đỏ nằm góc trên bên trái */
 .pc-badge {
   position: absolute;
-  top: 10px;
-  left: 10px;
+  top: 12px;
+  left: 12px;
   z-index: 2;
-  font-size: 10px;
-  font-weight: 700;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 3px 8px;
-  border-radius: 3px;
-  line-height: 1.4;
+  font-size: 12px;
+  font-weight: 500;
+  color: #ffffff;
+  padding: 4px 12px;
+  border-radius: 4px;
 }
 
 .pc-badge--new {
-  background: var(--pc-badge-new);
+  background-color: var(--pc-badge-new);
 }
 
 .pc-badge--discount {
-  background: var(--pc-badge-discount);
+  background-color: #db4444; /* Màu đỏ chuẩn */
 }
 
+/* Cụm nút Trái tim và Con mắt nằm dọc bên phải */
 .pc-icon-stack {
   position: absolute;
-  top: 8px;
-  right: 8px;
+  top: 12px;
+  right: 12px;
   z-index: 2;
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
 }
 
+/* Kiểu dáng hình tròn của nút Trái tim / Con mắt */
 .pc-icon-btn {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  background-color: #ffffff;
   border: none;
-  background: var(--pc-surface);
-  color: var(--pc-ink);
+  border-radius: 50%; /* Biến thành hình tròn */
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  box-shadow: 0 1px 3px rgba(20, 20, 30, 0.12);
-  transition: background var(--pc-transition), color var(--pc-transition),
-    transform var(--pc-transition);
-}
-
-.pc-icon-btn:hover {
-  transform: translateY(-1px);
+  font-size: 18px;
+  color: #000000;
+  transition: background var(--pc-transition), color var(--pc-transition);
 }
 
 .pc-icon-btn.is-active {
-  background: var(--pc-price);
-  color: #fff;
+  background-color: #db4444;
+  color: #ffffff;
 }
 
+/* Thanh "Add To Cart" màu đen, ẩn sẵn, chỉ hiện khi hover vào card */
 .pc-add-overlay {
   position: absolute;
   left: 0;
@@ -112,80 +107,93 @@
   align-items: center;
   justify-content: center;
   gap: 6px;
-  height: 34px;
+  width: 100%;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  padding: 8px 0;
   border: none;
-  background: var(--pc-overlay);
-  color: #fff;
-  font-size: 12px;
-  font-weight: 600;
-  letter-spacing: 0.01em;
   cursor: pointer;
+  opacity: 0;
   transform: translateY(100%);
-  transition: transform var(--pc-transition);
+  transition: opacity 0.2s ease, transform 0.2s ease;
 }
 
 .pc-card:hover .pc-add-overlay,
 .pc-card:focus-within .pc-add-overlay {
+  opacity: 1;
   transform: translateY(0);
 }
 
-.pc-add-overlay:hover {
-  background: #000;
-}
-
+/* Khối thông tin chữ phía dưới */
 .pc-body {
-  padding-top: 10px;
+  padding-top: 16px; /* Khoảng cách giữa khối ảnh và khối chữ */
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
+/* Tên sản phẩm màu đen đậm đà */
 .pc-title {
-  margin: 0 0 4px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--pc-ink);
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  font-size: 16px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0;
 }
 
+/* Khung chứa 2 loại giá tiền xếp ngang */
 .pc-price-row {
   display: flex;
-  align-items: baseline;
-  gap: 6px;
-  margin-bottom: 4px;
+  gap: 12px;
+  font-size: 16px;
+  font-weight: 600;
 }
 
+/* Giá mới màu đỏ */
 .pc-price {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--pc-price);
+  color: #db4444;
 }
 
+/* Giá cũ màu xám và có gạch ngang ở giữa */
 .pc-old-price {
-  font-size: 12px;
-  color: var(--pc-old-price);
-  text-decoration: line-through;
+  color: #000000;
+  opacity: 0.5;
+  text-decoration: line-through; /* Lệnh gạch ngang chữ */
 }
 
+/* Khối chứa sao và số lượng đánh giá */
 .pc-rating {
   display: flex;
   align-items: center;
-  gap: 5px;
-  margin-bottom: 6px;
+  gap: 8px;
 }
 
+/* Màu vàng cam chuẩn của các ngôi sao đánh giá */
 .pc-stars {
-  display: inline-flex;
-  gap: 2px;
-  color: var(--pc-star-empty);
+  color: #ffad33;
+  font-size: 16px;
+  display: flex;
+  gap: 4px;
+}
+
+/* Sao rỗng (chưa đạt) chuyển sang màu xám nhạt */
+.pc-star {
+  color: #d1d1d1;
 }
 
 .pc-star.is-filled {
-  color: var(--pc-star);
+  color: #ffad33;
 }
 
+/* Số lượng (88) màu xám nhạt */
 .pc-review-count {
-  font-size: 11px;
-  color: var(--pc-muted);
+  font-size: 14px;
+  font-weight: 600;
+  color: #000000;
+  opacity: 0.5;
 }
 
 .pc-swatches {
@@ -210,6 +218,6 @@
 
 @media (max-width: 480px) {
   .pc-card {
-    max-width: 100%;
+    width: 100%;
   }
 }

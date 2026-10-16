@@ -2,18 +2,9 @@ import './Wishlist.css';
 import TopHeader from '../components/TopHeader';
 import MainHeader from '../components/MainHeader';
 import Footer from '../components/Footer';
-import gucciBag from '../Public/image/BestSelling2.png';
-import cpuCooler from '../Public/image/BestSelling3.png';
-import gamepad from '../Public/image/ourproducts7.png';
-import jacket from '../Public/image/ourproducts8.png';
 import JustForYou from '../components/JustForYou';
 
-const wishlistProducts = [
-    { id: 1, imgUrl: gucciBag, name: 'Gucci duffle bag', newPrice: '$960', oldPrice: '$1160', discount: '-35%' },
-    { id: 2, imgUrl: cpuCooler, name: 'RGB liquid CPU Cooler', newPrice: '$1960', oldPrice: '' },
-    { id: 3, imgUrl: gamepad, name: 'GP11 Shooter USB Gamepad', newPrice: '$550', oldPrice: '' },
-    { id: 4, imgUrl: jacket, name: 'Quilted Satin Jacket', newPrice: '$750', oldPrice: '' },
-];
+const wishlistProducts = [];
 
 const Wishlist = () => {
     return (
@@ -28,7 +19,9 @@ const Wishlist = () => {
                 </div>
 
                 <div className="wishlist-grid">
-                    {wishlistProducts.map((product) => (
+                    {wishlistProducts.length === 0 ? (
+                        <div className="wishlist-empty-message">Bạn chưa thêm sản phẩm yêu thích nào</div>
+                    ) : wishlistProducts.map((product) => (
                         <div className="wishlist-card" key={product.id}>
                             <div className="wishlist-image-box">
                                 {product.discount && (

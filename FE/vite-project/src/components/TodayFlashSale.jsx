@@ -1,28 +1,10 @@
 import './TodayFlashSale.css';
-import saleproduct1 from '../Public/image/saleproduct1.png';
-import saleproduct2 from '../Public/image/saleproduct2.png';
-import saleproduct3 from '../Public/image/saleproduct3.png';
-import saleproduct4 from '../Public/image/saleproduct4.png';
+import dataset from '../data/ecommerce_dataset.json';
+import { formatCurrency } from '../utils/format';
+import ProductCard from './ProductCard.jsx';
 
-const products = [
-  { id: 1, name: 'HAVIT HV-G92 Gamepad', newPrice: '$120', oldPrice: '$160', discount: '-40%', stars: 5, reviews: 88, image: saleproduct1 },
-  { id: 2, name: 'AK-900 Wired Keyboard', newPrice: '$960', oldPrice: '$1160', discount: '-35%', stars: 4, reviews: 75, image: saleproduct2 },
-  { id: 3, name: 'IPS LCD Gaming Monitor', newPrice: '$370', oldPrice: '$400', discount: '-30%', stars: 5, reviews: 99, image: saleproduct3 },
-  { id: 4, name: 'S-Series Comfort Chair', newPrice: '$375', oldPrice: '$400', discount: '-25%', stars: 4.5, reviews: 99, image: saleproduct4 },
-];
+const products = dataset.products;
 
-const renderStars = (stars) => {
-  return Array.from({ length: 5 }, (_, index) => {
-    const starValue = index + 1;
-    let icon = 'bx-star';
-    if (starValue <= stars) {
-      icon = 'bxs-star';
-    } else if (starValue - 0.5 === stars) {
-      icon = 'bxs-star-half';
-    }
-    return <i key={index} className={`bx ${icon}`}></i>;
-  });
-};
 
 const TodayFlashSale = () => {
   return (
@@ -76,36 +58,22 @@ const TodayFlashSale = () => {
 
       {/* 3. DÃY CARD SẢN PHẨM NẰM DƯỚI ĐỒNG HỒ */}
       <div className="product-list">
-        {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <div className="image-box">
-              <span className="discount-tag">{product.discount}</span>
-              <div className="action-buttons">
-                <button className="icon-btn"><i className="bx bx-heart"></i></button>
-                <button className="icon-btn"><i className="bx bx-show"></i></button>
-              </div>
-              <img
-                src={product.image}
-                alt={product.name}
-                className="product-img"
-              />
-              <button className="add-to-cart-btn">Add To Cart</button>
-            </div>
-            <div className="info-box">
-              <h3 className="product-name">{product.name}</h3>
-              <div className="price-box">
-                <span className="new-price">{product.newPrice}</span>
-                <span className="old-price">{product.oldPrice}</span>
-              </div>
-              <div className="rating-box">
-                <div className="stars">
-                  {renderStars(product.stars)}
-                </div>
-                <span className="rating-count">({product.reviews})</span>
-              </div>
-            </div>
-          </div>
-        ))}
+        {products.slice(0, 4).map((product) => {
+          const percentOff = Math.round((1 - product.sale_price / product.price) * 100);
+          return (
+            <ProductCard
+              key={product.id}
+              id={product.id}
+              image={product.thumbnail}
+              title={product.name}
+              badge={percentOff > 0 ? { label: `-${percentOff}%`, type: 'discount' } : undefined}
+              price={formatCurrency(product.sale_price, 'VND')}
+              oldPrice={formatCurrency(product.price, 'VND')}
+              rating={product.rating_avg}
+              reviewCount={product.rating_count}
+            />
+          );
+        })}
       </div>
 
       {/* 4. NÚT XEM TẤT CẢ SẢN PHẨM, CĂN GIỮA */}

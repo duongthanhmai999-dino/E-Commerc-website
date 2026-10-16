@@ -10,7 +10,8 @@ import OurProducts from '../components/OurProducts.jsx';
 import NewArrival from '../components/NewArrival.jsx';
 import Services from '../components/Services.jsx';
 import Footer from '../components/Footer.jsx';
-const Homepage = () => {
+
+const Homepagedemofigma = () => {
     return (
         <>
             <TopHeader />
@@ -29,4 +30,4 @@ const Homepage = () => {
         </>
     )
 };
-export default Homepage;
+export default Homepagedemofigma;

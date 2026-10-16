@@ -75,6 +75,15 @@
   color: #aaa;
 }
 
+.navbar__search-btn {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  padding: 0;
+  cursor: pointer;
+}
+
 
 
 /* Icons */

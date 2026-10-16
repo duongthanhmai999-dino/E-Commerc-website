@@ -1,15 +1,32 @@
 import React, { useState } from "react";
 import "./ProductCard.css";
-
-/**
+import dataset from "../data/ecommerce_dataset.json";
+import { formatCurrency } from "../utils/format";
+import axios from 'axios';
+const fallbackProduct = dataset.products[0];
+const HandleAddproduct = (id) => {
+  axios.post('http://localhost:3000/api/cart', {
+    productId: id, 
+    quantity: 1
+  })
+  .then((res) => {
+    if (res.data.success) {
+      alert(`🎉 ĂN MỪNG: ${res.data.message}`);
+    }
+  }) .catch((error) => {
+    alert(`❌ THẤT BẠI: Không kết nối được với server Backend rồi bạn ơi!`);
+    console.log("Chi tiết lỗi rác của máy tính:", error.message);
+  });
+}
+/**a
  * ProductCard
  *
  * Props:
  * - image: string (url) — product image
  * - badge: { label: string, type: "new" | "discount" } — optional top-left tag
  * - title: string
- * - price: number
- * - oldPrice?: number
+ * - price: string | number — already formatted for display (caller controls currency)
+ * - oldPrice?: string | number
  * - rating?: number (0-5)
  * - reviewCount?: number
  * - colors?: string[] — hex/css colors for swatches
@@ -18,13 +35,14 @@ import "./ProductCard.css";
  * - onQuickView?: () => void
  */
 export default function ProductCard({
-  image,
+  id = fallbackProduct.id,
+  image = fallbackProduct.thumbnail,
   badge,
-  title,
-  price,
+  title = fallbackProduct.name,
+  price = formatCurrency(fallbackProduct.sale_price, "VND"),
   oldPrice,
-  rating = 0,
-  reviewCount,
+  rating = fallbackProduct.rating_avg,
+  reviewCount = fallbackProduct.rating_count,
   colors = [],
   onAddToCart,
   onToggleWishlist,
@@ -70,7 +88,7 @@ export default function ProductCard({
 
         <img className="pc-image" src={image} alt={title} loading="lazy" />
 
-        <button type="button" className="pc-add-overlay" onClick={onAddToCart}>
+        <button type="button" className="pc-add-overlay" onClick={() => HandleAddproduct(id)}>
           <CartIcon />
           <span>Add To Cart</span>
         </button>
@@ -80,8 +98,8 @@ export default function ProductCard({
         <p className="pc-title">{title}</p>
 
         <div className="pc-price-row">
-          <span className="pc-price">${price}</span>
-          {oldPrice && <span className="pc-old-price">${oldPrice}</span>}
+          <span className="pc-price">{price}</span>
+          {oldPrice && <span className="pc-old-price">{oldPrice}</span>}
         </div>
 
         {rating > 0 && (

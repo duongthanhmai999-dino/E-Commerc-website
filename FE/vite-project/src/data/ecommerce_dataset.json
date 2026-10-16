@@ -1,0 +1,4649 @@
+{
+  "metadata": {
+    "name": "E-commerce Sample Dataset (VN)",
+    "version": "1.0.0",
+    "description": "Bộ dữ liệu mẫu cho đề tài web thương mại điện tử. Dùng cho seed database (MySQL/PostgreSQL/MongoDB) hoặc mock API.",
+    "currency": "VND",
+    "locale": "vi_VN",
+    "generated_at": "2026-07-24",
+    "counts": {
+      "categories": 10,
+      "brands": 12,
+      "suppliers": 6,
+      "products": 40,
+      "users": 25,
+      "addresses": 30,
+      "orders": 35,
+      "order_items": 78,
+      "payments": 35,
+      "shipments": 30,
+      "reviews": 45,
+      "vouchers": 8,
+      "carts": 6,
+      "wishlists": 8
+    },
+    "image_notes": {
+      "provider": "picsum.photos (placeholder ảnh random dựa vào seed)",
+      "product_images_per_item": 4,
+      "thumbnail_per_product": true,
+      "review_images_optional": true,
+      "brand_logo": true,
+      "banner_desktop_and_mobile": true,
+      "gợi_ý_thay_thế": "Có thể thay picsum.photos bằng CDN riêng (Cloudinary, S3, Firebase Storage) khi deploy thật"
+    }
+  },
+  "categories": [
+    {
+      "id": 1,
+      "slug": "dien-thoai",
+      "name": "Điện thoại",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat1/400",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "slug": "laptop",
+      "name": "Laptop",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat2/400",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "slug": "phu-kien",
+      "name": "Phụ kiện",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat3/400",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "slug": "tai-nghe",
+      "name": "Tai nghe",
+      "parent_id": 3,
+      "image": "https://picsum.photos/seed/cat4/400",
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "slug": "sac-cap",
+      "name": "Sạc & Cáp",
+      "parent_id": 3,
+      "image": "https://picsum.photos/seed/cat5/400",
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "slug": "thoi-trang-nam",
+      "name": "Thời trang nam",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat6/400",
+      "is_active": true
+    },
+    {
+      "id": 7,
+      "slug": "thoi-trang-nu",
+      "name": "Thời trang nữ",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat7/400",
+      "is_active": true
+    },
+    {
+      "id": 8,
+      "slug": "gia-dung",
+      "name": "Đồ gia dụng",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat8/400",
+      "is_active": true
+    },
+    {
+      "id": 9,
+      "slug": "sach",
+      "name": "Sách",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat9/400",
+      "is_active": true
+    },
+    {
+      "id": 10,
+      "slug": "my-pham",
+      "name": "Mỹ phẩm",
+      "parent_id": null,
+      "image": "https://picsum.photos/seed/cat10/400",
+      "is_active": true
+    }
+  ],
+  "brands": [
+    {
+      "id": 1,
+      "name": "Apple",
+      "slug": "apple",
+      "country": "US",
+      "logo": "https://picsum.photos/seed/brand1/200/200"
+    },
+    {
+      "id": 2,
+      "name": "Samsung",
+      "slug": "samsung",
+      "country": "KR",
+      "logo": "https://picsum.photos/seed/brand2/200/200"
+    },
+    {
+      "id": 3,
+      "name": "Xiaomi",
+      "slug": "xiaomi",
+      "country": "CN",
+      "logo": "https://picsum.photos/seed/brand3/200/200"
+    },
+    {
+      "id": 4,
+      "name": "Dell",
+      "slug": "dell",
+      "country": "US",
+      "logo": "https://picsum.photos/seed/brand4/200/200"
+    },
+    {
+      "id": 5,
+      "name": "Asus",
+      "slug": "asus",
+      "country": "TW",
+      "logo": "https://picsum.photos/seed/brand5/200/200"
+    },
+    {
+      "id": 6,
+      "name": "Sony",
+      "slug": "sony",
+      "country": "JP",
+      "logo": "https://picsum.photos/seed/brand6/200/200"
+    },
+    {
+      "id": 7,
+      "name": "Anker",
+      "slug": "anker",
+      "country": "US",
+      "logo": "https://picsum.photos/seed/brand7/200/200"
+    },
+    {
+      "id": 8,
+      "name": "Uniqlo",
+      "slug": "uniqlo",
+      "country": "JP",
+      "logo": "https://picsum.photos/seed/brand8/200/200"
+    },
+    {
+      "id": 9,
+      "name": "Canifa",
+      "slug": "canifa",
+      "country": "VN",
+      "logo": "https://picsum.photos/seed/brand9/200/200"
+    },
+    {
+      "id": 10,
+      "name": "Lock&Lock",
+      "slug": "lock-and-lock",
+      "country": "KR",
+      "logo": "https://picsum.photos/seed/brand10/200/200"
+    },
+    {
+      "id": 11,
+      "name": "NXB Trẻ",
+      "slug": "nxb-tre",
+      "country": "VN",
+      "logo": "https://picsum.photos/seed/brand11/200/200"
+    },
+    {
+      "id": 12,
+      "name": "Innisfree",
+      "slug": "innisfree",
+      "country": "KR",
+      "logo": "https://picsum.photos/seed/brand12/200/200"
+    }
+  ],
+  "suppliers": [
+    {
+      "id": 1,
+      "name": "Công ty TNHH FPT Trading",
+      "phone": "0281234567",
+      "email": "b2b@fpt.com.vn",
+      "address": "Q.Cầu Giấy, Hà Nội"
+    },
+    {
+      "id": 2,
+      "name": "Thế Giới Di Động Distribution",
+      "phone": "0287654321",
+      "email": "supply@tgdd.vn",
+      "address": "Q.Tân Bình, TP.HCM"
+    },
+    {
+      "id": 3,
+      "da": "Uniqlo Vietnam Co., Ltd",
+      "phone": "0289990001",
+      "email": "b2b@uniqlo.vn",
+      "address": "Q.1, TP.HCM"
+    },
+    {
+      "id": 4,
+      "name": "Canifa Fashion JSC",
+      "phone": "0243334455",
+      "email": "supply@canifa.com",
+      "address": "Q.Thanh Xuân, Hà Nội"
+    },
+    {
+      "id": 5,
+      "name": "Fahasa Books",
+      "phone": "0288887777",
+      "email": "orders@fahasa.com.vn",
+      "address": "Q.3, TP.HCM"
+    },
+    {
+      "id": 6,
+      "name": "K-Beauty Import",
+      "phone": "0245556666",
+      "email": "hello@kbeauty.vn",
+      "address": "Q.Đống Đa, Hà Nội"
+    }
+  ],
+  "warehouses": [
+    {
+      "id": 1,
+      "code": "WH-HN",
+      "name": "Kho Hà Nội",
+      "address": "KCN Sài Đồng, Long Biên, Hà Nội",
+      "region": "north"
+    },
+    {
+      "id": 2,
+      "code": "WH-DN",
+      "name": "Kho Đà Nẵng",
+      "address": "KCN Hòa Khánh, Liên Chiểu, Đà Nẵng",
+      "region": "central"
+    },
+    {
+      "id": 3,
+      "code": "WH-HCM",
+      "name": "Kho TP.HCM",
+      "address": "KCN Tân Bình, TP.HCM",
+      "region": "south"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "sku": "IP15PM-256-BLK",
+      "name": "iPhone 15 Pro Max 256GB",
+      "slug": "iphone-15-pro-max-256gb",
+      "category_id": 1,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 32990000,
+      "sale_price": 30990000,
+      "cost": 28000000,
+      "stock": 42,
+      "rating_avg": 4.8,
+      "rating_count": 15,
+      "sold": 128,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p1a/800/800",
+        "https://picsum.photos/seed/p1b/800/800",
+        "https://picsum.photos/seed/p1c/800/800",
+        "https://picsum.photos/seed/p1d/800/800"
+      ],
+      "attributes": {
+        "color": "Đen",
+        "storage": "256GB",
+        "ram": "8GB",
+        "screen": "6.7 inch"
+      },
+      "description": "Titan tự nhiên, chip A17 Pro, camera 48MP.",
+      "thumbnail": "https://picsum.photos/seed/p1main/400/400"
+    },
+    {
+      "id": 2,
+      "sku": "IP15-128-BLU",
+      "name": "iPhone 15 128GB",
+      "slug": "iphone-15-128gb",
+      "category_id": 1,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 22990000,
+      "sale_price": 21490000,
+      "cost": 19500000,
+      "stock": 60,
+      "rating_avg": 4.7,
+      "rating_count": 22,
+      "sold": 210,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p2a/800/800",
+        "https://picsum.photos/seed/p2b/800/800",
+        "https://picsum.photos/seed/p2c/800/800",
+        "https://picsum.photos/seed/p2d/800/800"
+      ],
+      "attributes": {
+        "color": "Xanh",
+        "storage": "128GB",
+        "ram": "6GB",
+        "screen": "6.1 inch"
+      },
+      "description": "Chip A16 Bionic, cổng USB-C, camera kép 48MP.",
+      "thumbnail": "https://picsum.photos/seed/p2main/400/400"
+    },
+    {
+      "id": 3,
+      "sku": "SS-S24U-512-GRY",
+      "name": "Samsung Galaxy S24 Ultra 512GB",
+      "slug": "samsung-galaxy-s24-ultra-512gb",
+      "category_id": 1,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 33990000,
+      "sale_price": 31490000,
+      "cost": 27500000,
+      "stock": 25,
+      "rating_avg": 4.6,
+      "rating_count": 9,
+      "sold": 55,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p3a/800/800",
+        "https://picsum.photos/seed/p3b/800/800",
+        "https://picsum.photos/seed/p3c/800/800",
+        "https://picsum.photos/seed/p3d/800/800"
+      ],
+      "attributes": {
+        "color": "Xám Titan",
+        "storage": "512GB",
+        "ram": "12GB",
+        "screen": "6.8 inch"
+      },
+      "description": "S Pen, camera 200MP, Snapdragon 8 Gen 3.",
+      "thumbnail": "https://picsum.photos/seed/p3main/400/400"
+    },
+    {
+      "id": 4,
+      "sku": "XM-14T-256",
+      "name": "Xiaomi 14T Pro",
+      "slug": "xiaomi-14t-pro",
+      "category_id": 1,
+      "brand_id": 3,
+      "supplier_id": 1,
+      "price": 15990000,
+      "sale_price": 14490000,
+      "cost": 12000000,
+      "stock": 80,
+      "rating_avg": 4.4,
+      "rating_count": 31,
+      "sold": 340,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p4a/800/800",
+        "https://picsum.photos/seed/p4b/800/800",
+        "https://picsum.photos/seed/p4c/800/800",
+        "https://picsum.photos/seed/p4d/800/800"
+      ],
+      "attributes": {
+        "color": "Đen",
+        "storage": "256GB",
+        "ram": "12GB"
+      },
+      "description": "Camera Leica, sạc 120W, chip Dimensity 9300+.",
+      "thumbnail": "https://picsum.photos/seed/p4main/400/400"
+    },
+    {
+      "id": 5,
+      "sku": "SS-A55-128",
+      "name": "Samsung Galaxy A55 5G 128GB",
+      "slug": "galaxy-a55-5g-128gb",
+      "category_id": 1,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 9990000,
+      "sale_price": 8990000,
+      "cost": 7500000,
+      "stock": 120,
+      "rating_avg": 4.3,
+      "rating_count": 44,
+      "sold": 512,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p5a/800/800",
+        "https://picsum.photos/seed/p5b/800/800",
+        "https://picsum.photos/seed/p5c/800/800",
+        "https://picsum.photos/seed/p5d/800/800"
+      ],
+      "attributes": {
+        "color": "Xanh nhạt",
+        "storage": "128GB",
+        "ram": "8GB"
+      },
+      "description": "Màn AMOLED 120Hz, chip Exynos 1480.",
+      "thumbnail": "https://picsum.photos/seed/p5main/400/400"
+    },
+    {
+      "id": 6,
+      "sku": "MBA-M3-13-256",
+      "name": "MacBook Air M3 13 inch 256GB",
+      "slug": "macbook-air-m3-13-256",
+      "category_id": 2,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 27990000,
+      "sale_price": 26490000,
+      "cost": 23500000,
+      "stock": 30,
+      "rating_avg": 4.9,
+      "rating_count": 18,
+      "sold": 88,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p6a/800/800",
+        "https://picsum.photos/seed/p6b/800/800",
+        "https://picsum.photos/seed/p6c/800/800",
+        "https://picsum.photos/seed/p6d/800/800"
+      ],
+      "attributes": {
+        "color": "Xám",
+        "cpu": "Apple M3",
+        "ram": "8GB",
+        "ssd": "256GB"
+      },
+      "description": "Chip M3 8-core, pin 18 giờ, siêu mỏng nhẹ.",
+      "thumbnail": "https://picsum.photos/seed/p6main/400/400"
+    },
+    {
+      "id": 7,
+      "sku": "MBP-M3P-14-512",
+      "name": "MacBook Pro 14 M3 Pro 512GB",
+      "slug": "macbook-pro-14-m3-pro-512",
+      "category_id": 2,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 52990000,
+      "sale_price": 50990000,
+      "cost": 45000000,
+      "stock": 12,
+      "rating_avg": 4.9,
+      "rating_count": 7,
+      "sold": 24,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p7a/800/800",
+        "https://picsum.photos/seed/p7b/800/800",
+        "https://picsum.photos/seed/p7c/800/800",
+        "https://picsum.photos/seed/p7d/800/800"
+      ],
+      "attributes": {
+        "color": "Đen Space",
+        "cpu": "M3 Pro",
+        "ram": "18GB",
+        "ssd": "512GB"
+      },
+      "description": "Màn Liquid Retina XDR, hiệu năng đồ hoạ mạnh mẽ.",
+      "thumbnail": "https://picsum.photos/seed/p7main/400/400"
+    },
+    {
+      "id": 8,
+      "sku": "DELL-XPS13-9340",
+      "name": "Dell XPS 13 9340 Core Ultra 7",
+      "slug": "dell-xps-13-9340",
+      "category_id": 2,
+      "brand_id": 4,
+      "supplier_id": 1,
+      "price": 41990000,
+      "sale_price": 39990000,
+      "cost": 34000000,
+      "stock": 15,
+      "rating_avg": 4.5,
+      "rating_count": 6,
+      "sold": 20,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p8a/800/800",
+        "https://picsum.photos/seed/p8b/800/800",
+        "https://picsum.photos/seed/p8c/800/800",
+        "https://picsum.photos/seed/p8d/800/800"
+      ],
+      "attributes": {
+        "cpu": "Intel Core Ultra 7",
+        "ram": "16GB",
+        "ssd": "1TB"
+      },
+      "description": "Thiết kế InfinityEdge, phím cảm ứng.",
+      "thumbnail": "https://picsum.photos/seed/p8main/400/400"
+    },
+    {
+      "id": 9,
+      "sku": "ASUS-TUF-A15",
+      "name": "Asus TUF Gaming A15 FA506",
+      "slug": "asus-tuf-gaming-a15",
+      "category_id": 2,
+      "brand_id": 5,
+      "supplier_id": 1,
+      "price": 25990000,
+      "sale_price": 23990000,
+      "cost": 20500000,
+      "stock": 22,
+      "rating_avg": 4.4,
+      "rating_count": 12,
+      "sold": 66,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p9a/800/800",
+        "https://picsum.photos/seed/p9b/800/800",
+        "https://picsum.photos/seed/p9c/800/800",
+        "https://picsum.photos/seed/p9d/800/800"
+      ],
+      "attributes": {
+        "cpu": "Ryzen 7 7735HS",
+        "ram": "16GB",
+        "ssd": "512GB",
+        "gpu": "RTX 4060"
+      },
+      "description": "Laptop gaming bền bỉ chuẩn quân đội MIL-STD.",
+      "thumbnail": "https://picsum.photos/seed/p9main/400/400"
+    },
+    {
+      "id": 10,
+      "sku": "APP-AIRPODS-P2",
+      "name": "Apple AirPods Pro 2 (USB-C)",
+      "slug": "airpods-pro-2-usbc",
+      "category_id": 4,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 6490000,
+      "sale_price": 5990000,
+      "cost": 4900000,
+      "stock": 100,
+      "rating_avg": 4.8,
+      "rating_count": 65,
+      "sold": 480,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p10a/800/800",
+        "https://picsum.photos/seed/p10b/800/800",
+        "https://picsum.photos/seed/p10c/800/800",
+        "https://picsum.photos/seed/p10d/800/800"
+      ],
+      "attributes": {
+        "color": "Trắng",
+        "type": "In-ear",
+        "anc": true
+      },
+      "description": "Chống ồn chủ động, chip H2, sạc USB-C.",
+      "thumbnail": "https://picsum.photos/seed/p10main/400/400"
+    },
+    {
+      "id": 11,
+      "sku": "SONY-WH1000XM5",
+      "name": "Sony WH-1000XM5",
+      "slug": "sony-wh-1000xm5",
+      "category_id": 4,
+      "brand_id": 6,
+      "supplier_id": 1,
+      "price": 8490000,
+      "sale_price": 7490000,
+      "cost": 6200000,
+      "stock": 45,
+      "rating_avg": 4.9,
+      "rating_count": 33,
+      "sold": 190,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p11a/800/800",
+        "https://picsum.photos/seed/p11b/800/800",
+        "https://picsum.photos/seed/p11c/800/800",
+        "https://picsum.photos/seed/p11d/800/800"
+      ],
+      "attributes": {
+        "color": "Đen",
+        "type": "Over-ear",
+        "anc": true,
+        "battery_hours": 30
+      },
+      "description": "Chống ồn hàng đầu, chất âm audiophile.",
+      "thumbnail": "https://picsum.photos/seed/p11main/400/400"
+    },
+    {
+      "id": 12,
+      "sku": "SS-BUDS3PRO",
+      "name": "Samsung Galaxy Buds3 Pro",
+      "slug": "galaxy-buds3-pro",
+      "category_id": 4,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 5490000,
+      "sale_price": 4790000,
+      "cost": 3900000,
+      "stock": 60,
+      "rating_avg": 4.5,
+      "rating_count": 20,
+      "sold": 140,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p12a/800/800",
+        "https://picsum.photos/seed/p12b/800/800",
+        "https://picsum.photos/seed/p12c/800/800",
+        "https://picsum.photos/seed/p12d/800/800"
+      ],
+      "attributes": {
+        "color": "Bạc",
+        "type": "In-ear"
+      },
+      "description": "AI Translation, Hi-Fi 24bit.",
+      "thumbnail": "https://picsum.photos/seed/p12main/400/400"
+    },
+    {
+      "id": 13,
+      "sku": "ANK-CHG-65W",
+      "name": "Anker Nano II 65W",
+      "slug": "anker-nano-ii-65w",
+      "category_id": 5,
+      "brand_id": 7,
+      "supplier_id": 1,
+      "price": 990000,
+      "sale_price": 790000,
+      "cost": 550000,
+      "stock": 200,
+      "rating_avg": 4.7,
+      "rating_count": 88,
+      "sold": 900,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p13a/800/800",
+        "https://picsum.photos/seed/p13b/800/800",
+        "https://picsum.photos/seed/p13c/800/800",
+        "https://picsum.photos/seed/p13d/800/800"
+      ],
+      "attributes": {
+        "wattage": "65W",
+        "port": "USB-C",
+        "gan": true
+      },
+      "description": "Sạc GaN nhỏ gọn, an toàn cho laptop và điện thoại.",
+      "thumbnail": "https://picsum.photos/seed/p13main/400/400"
+    },
+    {
+      "id": 14,
+      "sku": "ANK-CABLE-C2L",
+      "name": "Anker Cáp USB-C to Lightning 1.8m",
+      "slug": "anker-cable-c-to-lightning",
+      "category_id": 5,
+      "brand_id": 7,
+      "supplier_id": 1,
+      "price": 450000,
+      "sale_price": 349000,
+      "cost": 220000,
+      "stock": 300,
+      "rating_avg": 4.6,
+      "rating_count": 105,
+      "sold": 1250,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p14a/800/800",
+        "https://picsum.photos/seed/p14b/800/800",
+        "https://picsum.photos/seed/p14c/800/800",
+        "https://picsum.photos/seed/p14d/800/800"
+      ],
+      "attributes": {
+        "length": "1.8m",
+        "type": "USB-C to Lightning"
+      },
+      "description": "Chứng nhận MFi, sạc nhanh PD.",
+      "thumbnail": "https://picsum.photos/seed/p14main/400/400"
+    },
+    {
+      "id": 15,
+      "sku": "UN-MENSHIRT-L",
+      "name": "Áo thun nam Uniqlo AIRism cổ tròn",
+      "slug": "uniqlo-airism-men-tshirt",
+      "category_id": 6,
+      "brand_id": 8,
+      "supplier_id": 3,
+      "price": 449000,
+      "sale_price": 349000,
+      "cost": 220000,
+      "stock": 500,
+      "rating_avg": 4.5,
+      "rating_count": 60,
+      "sold": 780,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p15a/800/800",
+        "https://picsum.photos/seed/p15b/800/800",
+        "https://picsum.photos/seed/p15c/800/800",
+        "https://picsum.photos/seed/p15d/800/800"
+      ],
+      "attributes": {
+        "size": "L",
+        "color": "Xám",
+        "material": "Polyester"
+      },
+      "description": "Vải AIRism thoáng khí, chống tia UV.",
+      "thumbnail": "https://picsum.photos/seed/p15main/400/400"
+    },
+    {
+      "id": 16,
+      "sku": "UN-JEANS-32",
+      "name": "Quần Jean nam Uniqlo Slim Fit",
+      "slug": "uniqlo-jeans-slim",
+      "category_id": 6,
+      "brand_id": 8,
+      "supplier_id": 3,
+      "price": 990000,
+      "sale_price": 799000,
+      "cost": 500000,
+      "stock": 220,
+      "rating_avg": 4.4,
+      "rating_count": 27,
+      "sold": 210,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p16a/800/800",
+        "https://picsum.photos/seed/p16b/800/800",
+        "https://picsum.photos/seed/p16c/800/800",
+        "https://picsum.photos/seed/p16d/800/800"
+      ],
+      "attributes": {
+        "size": "32",
+        "color": "Xanh đậm"
+      },
+      "description": "Chất bò co giãn 4 chiều.",
+      "thumbnail": "https://picsum.photos/seed/p16main/400/400"
+    },
+    {
+      "id": 17,
+      "sku": "CN-DRESS-M",
+      "name": "Đầm nữ Canifa dáng suông",
+      "slug": "canifa-dress-suong",
+      "category_id": 7,
+      "brand_id": 9,
+      "supplier_id": 4,
+      "price": 899000,
+      "sale_price": 699000,
+      "cost": 380000,
+      "stock": 90,
+      "rating_avg": 4.3,
+      "rating_count": 14,
+      "sold": 78,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p17a/800/800",
+        "https://picsum.photos/seed/p17b/800/800",
+        "https://picsum.photos/seed/p17c/800/800",
+        "https://picsum.photos/seed/p17d/800/800"
+      ],
+      "attributes": {
+        "size": "M",
+        "color": "Hồng pastel"
+      },
+      "description": "Chất liệu tencel mát, phù hợp công sở.",
+      "thumbnail": "https://picsum.photos/seed/p17main/400/400"
+    },
+    {
+      "id": 18,
+      "sku": "CN-BLOUSE-S",
+      "name": "Áo sơ mi nữ Canifa lụa",
+      "slug": "canifa-blouse-lua",
+      "category_id": 7,
+      "brand_id": 9,
+      "supplier_id": 4,
+      "price": 599000,
+      "sale_price": 449000,
+      "cost": 260000,
+      "stock": 130,
+      "rating_avg": 4.4,
+      "rating_count": 22,
+      "sold": 155,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p18a/800/800",
+        "https://picsum.photos/seed/p18b/800/800",
+        "https://picsum.photos/seed/p18c/800/800",
+        "https://picsum.photos/seed/p18d/800/800"
+      ],
+      "attributes": {
+        "size": "S",
+        "color": "Trắng"
+      },
+      "description": "Lụa mềm mại, thanh lịch.",
+      "thumbnail": "https://picsum.photos/seed/p18main/400/400"
+    },
+    {
+      "id": 19,
+      "sku": "LL-BOTTLE-500",
+      "name": "Bình giữ nhiệt Lock&Lock 500ml",
+      "slug": "lock-and-lock-binh-giu-nhiet-500",
+      "category_id": 8,
+      "brand_id": 10,
+      "supplier_id": 1,
+      "price": 490000,
+      "sale_price": 390000,
+      "cost": 220000,
+      "stock": 350,
+      "rating_avg": 4.7,
+      "rating_count": 130,
+      "sold": 2100,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p19a/800/800",
+        "https://picsum.photos/seed/p19b/800/800",
+        "https://picsum.photos/seed/p19c/800/800",
+        "https://picsum.photos/seed/p19d/800/800"
+      ],
+      "attributes": {
+        "volume": "500ml",
+        "color": "Bạc"
+      },
+      "description": "Giữ nóng 12h, giữ lạnh 24h.",
+      "thumbnail": "https://picsum.photos/seed/p19main/400/400"
+    },
+    {
+      "id": 20,
+      "sku": "LL-LUNCHBOX-3",
+      "name": "Bộ hộp cơm Lock&Lock 3 ngăn",
+      "slug": "lock-and-lock-hop-com-3",
+      "category_id": 8,
+      "brand_id": 10,
+      "supplier_id": 1,
+      "price": 690000,
+      "sale_price": 549000,
+      "cost": 320000,
+      "stock": 200,
+      "rating_avg": 4.6,
+      "rating_count": 75,
+      "sold": 640,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p20a/800/800",
+        "https://picsum.photos/seed/p20b/800/800",
+        "https://picsum.photos/seed/p20c/800/800",
+        "https://picsum.photos/seed/p20d/800/800"
+      ],
+      "attributes": {
+        "material": "Nhựa Tritan",
+        "compartments": 3
+      },
+      "description": "An toàn thực phẩm, dùng được lò vi sóng.",
+      "thumbnail": "https://picsum.photos/seed/p20main/400/400"
+    },
+    {
+      "id": 21,
+      "sku": "BK-DACNHANTAM",
+      "name": "Sách - Đắc Nhân Tâm",
+      "slug": "sach-dac-nhan-tam",
+      "category_id": 9,
+      "brand_id": 11,
+      "supplier_id": 5,
+      "price": 120000,
+      "sale_price": 89000,
+      "cost": 45000,
+      "stock": 800,
+      "rating_avg": 4.9,
+      "rating_count": 512,
+      "sold": 8900,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p21a/800/800",
+        "https://picsum.photos/seed/p21b/800/800",
+        "https://picsum.photos/seed/p21c/800/800",
+        "https://picsum.photos/seed/p21d/800/800"
+      ],
+      "attributes": {
+        "author": "Dale Carnegie",
+        "pages": 320,
+        "language": "vi"
+      },
+      "description": "Sách kỹ năng bán chạy mọi thời đại.",
+      "thumbnail": "https://picsum.photos/seed/p21main/400/400"
+    },
+    {
+      "id": 22,
+      "sku": "BK-NHAGIAKIM",
+      "name": "Sách - Nhà Giả Kim",
+      "slug": "sach-nha-gia-kim",
+      "category_id": 9,
+      "brand_id": 11,
+      "supplier_id": 5,
+      "price": 89000,
+      "sale_price": 65000,
+      "cost": 32000,
+      "stock": 650,
+      "rating_avg": 4.8,
+      "rating_count": 402,
+      "sold": 6700,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p22a/800/800",
+        "https://picsum.photos/seed/p22b/800/800",
+        "https://picsum.photos/seed/p22c/800/800",
+        "https://picsum.photos/seed/p22d/800/800"
+      ],
+      "attributes": {
+        "author": "Paulo Coelho",
+        "pages": 227,
+        "language": "vi"
+      },
+      "description": "Tiểu thuyết truyền cảm hứng của Paulo Coelho.",
+      "thumbnail": "https://picsum.photos/seed/p22main/400/400"
+    },
+    {
+      "id": 23,
+      "sku": "BK-CLEANCODE",
+      "name": "Clean Code (bản tiếng Anh)",
+      "slug": "sach-clean-code",
+      "category_id": 9,
+      "brand_id": 11,
+      "supplier_id": 5,
+      "price": 450000,
+      "sale_price": 380000,
+      "cost": 260000,
+      "stock": 120,
+      "rating_avg": 4.9,
+      "rating_count": 90,
+      "sold": 350,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p23a/800/800",
+        "https://picsum.photos/seed/p23b/800/800",
+        "https://picsum.photos/seed/p23c/800/800",
+        "https://picsum.photos/seed/p23d/800/800"
+      ],
+      "attributes": {
+        "author": "Robert C. Martin",
+        "pages": 464,
+        "language": "en"
+      },
+      "description": "Sách kinh điển dành cho lập trình viên.",
+      "thumbnail": "https://picsum.photos/seed/p23main/400/400"
+    },
+    {
+      "id": 24,
+      "sku": "INN-GREEN-TEA-SR",
+      "name": "Serum Innisfree Green Tea 80ml",
+      "slug": "innisfree-serum-tra-xanh",
+      "category_id": 10,
+      "brand_id": 12,
+      "supplier_id": 6,
+      "price": 690000,
+      "sale_price": 549000,
+      "cost": 320000,
+      "stock": 180,
+      "rating_avg": 4.6,
+      "rating_count": 88,
+      "sold": 520,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p24a/800/800",
+        "https://picsum.photos/seed/p24b/800/800",
+        "https://picsum.photos/seed/p24c/800/800",
+        "https://picsum.photos/seed/p24d/800/800"
+      ],
+      "attributes": {
+        "volume": "80ml",
+        "skin_type": "Mọi loại da"
+      },
+      "description": "Cấp ẩm, chống oxy hoá từ trà xanh Jeju.",
+      "thumbnail": "https://picsum.photos/seed/p24main/400/400"
+    },
+    {
+      "id": 25,
+      "sku": "INN-SUNSCREEN-50",
+      "name": "Kem chống nắng Innisfree SPF50+",
+      "slug": "innisfree-sunscreen-spf50",
+      "category_id": 10,
+      "brand_id": 12,
+      "supplier_id": 6,
+      "price": 390000,
+      "sale_price": 299000,
+      "cost": 170000,
+      "stock": 260,
+      "rating_avg": 4.5,
+      "rating_count": 145,
+      "sold": 980,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p25a/800/800",
+        "https://picsum.photos/seed/p25b/800/800",
+        "https://picsum.photos/seed/p25c/800/800",
+        "https://picsum.photos/seed/p25d/800/800"
+      ],
+      "attributes": {
+        "spf": "50+",
+        "volume": "50ml"
+      },
+      "description": "Không nhờn, phù hợp da dầu.",
+      "thumbnail": "https://picsum.photos/seed/p25main/400/400"
+    },
+    {
+      "id": 26,
+      "sku": "APP-WATCH-S9-45",
+      "name": "Apple Watch Series 9 45mm GPS",
+      "slug": "apple-watch-s9-45",
+      "category_id": 3,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 11990000,
+      "sale_price": 10990000,
+      "cost": 9200000,
+      "stock": 40,
+      "rating_avg": 4.7,
+      "rating_count": 25,
+      "sold": 130,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p26a/800/800",
+        "https://picsum.photos/seed/p26b/800/800",
+        "https://picsum.photos/seed/p26c/800/800",
+        "https://picsum.photos/seed/p26d/800/800"
+      ],
+      "attributes": {
+        "size": "45mm",
+        "connectivity": "GPS",
+        "color": "Midnight"
+      },
+      "description": "Chip S9, màn hình sáng hơn, cử chỉ Double Tap.",
+      "thumbnail": "https://picsum.photos/seed/p26main/400/400"
+    },
+    {
+      "id": 27,
+      "sku": "APP-PENCIL-2",
+      "name": "Apple Pencil (thế hệ 2)",
+      "slug": "apple-pencil-2",
+      "category_id": 3,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 3990000,
+      "sale_price": 3690000,
+      "cost": 3100000,
+      "stock": 55,
+      "rating_avg": 4.8,
+      "rating_count": 42,
+      "sold": 220,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p27a/800/800",
+        "https://picsum.photos/seed/p27b/800/800",
+        "https://picsum.photos/seed/p27c/800/800",
+        "https://picsum.photos/seed/p27d/800/800"
+      ],
+      "attributes": {
+        "color": "Trắng"
+      },
+      "description": "Tương thích iPad Pro / Air, sạc từ tính.",
+      "thumbnail": "https://picsum.photos/seed/p27main/400/400"
+    },
+    {
+      "id": 28,
+      "sku": "SS-TAB-S9-256",
+      "name": "Samsung Galaxy Tab S9 256GB",
+      "slug": "galaxy-tab-s9-256",
+      "category_id": 2,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 20990000,
+      "sale_price": 18990000,
+      "cost": 16500000,
+      "stock": 28,
+      "rating_avg": 4.6,
+      "rating_count": 14,
+      "sold": 60,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p28a/800/800",
+        "https://picsum.photos/seed/p28b/800/800",
+        "https://picsum.photos/seed/p28c/800/800",
+        "https://picsum.photos/seed/p28d/800/800"
+      ],
+      "attributes": {
+        "storage": "256GB",
+        "ram": "12GB",
+        "screen": "11 inch"
+      },
+      "description": "Kèm S Pen, Snapdragon 8 Gen 2 for Galaxy.",
+      "thumbnail": "https://picsum.photos/seed/p28main/400/400"
+    },
+    {
+      "id": 29,
+      "sku": "ANK-POWERBANK-20K",
+      "name": "Sạc dự phòng Anker 20000mAh 22.5W",
+      "slug": "anker-powerbank-20000",
+      "category_id": 5,
+      "brand_id": 7,
+      "supplier_id": 1,
+      "price": 1290000,
+      "sale_price": 990000,
+      "cost": 700000,
+      "stock": 180,
+      "rating_avg": 4.6,
+      "rating_count": 96,
+      "sold": 720,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p29a/800/800",
+        "https://picsum.photos/seed/p29b/800/800",
+        "https://picsum.photos/seed/p29c/800/800",
+        "https://picsum.photos/seed/p29d/800/800"
+      ],
+      "attributes": {
+        "capacity": "20000mAh",
+        "wattage": "22.5W"
+      },
+      "description": "Sạc nhanh PD, đủ pin cho iPhone 4-5 lần.",
+      "thumbnail": "https://picsum.photos/seed/p29main/400/400"
+    },
+    {
+      "id": 30,
+      "sku": "UN-JACKET-XL",
+      "name": "Áo khoác nam Uniqlo Ultra Light Down",
+      "slug": "uniqlo-ultra-light-down",
+      "category_id": 6,
+      "brand_id": 8,
+      "supplier_id": 3,
+      "price": 1990000,
+      "sale_price": 1590000,
+      "cost": 950000,
+      "stock": 100,
+      "rating_avg": 4.7,
+      "rating_count": 50,
+      "sold": 300,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p30a/800/800",
+        "https://picsum.photos/seed/p30b/800/800",
+        "https://picsum.photos/seed/p30c/800/800",
+        "https://picsum.photos/seed/p30d/800/800"
+      ],
+      "attributes": {
+        "size": "XL",
+        "color": "Đen"
+      },
+      "description": "Nhẹ, ấm, có thể gấp gọn.",
+      "thumbnail": "https://picsum.photos/seed/p30main/400/400"
+    },
+    {
+      "id": 31,
+      "sku": "SONY-A7C2-BODY",
+      "name": "Máy ảnh Sony A7C II (Body)",
+      "slug": "sony-a7c-ii-body",
+      "category_id": 3,
+      "brand_id": 6,
+      "supplier_id": 1,
+      "price": 55990000,
+      "sale_price": 52990000,
+      "cost": 45000000,
+      "stock": 8,
+      "rating_avg": 4.9,
+      "rating_count": 5,
+      "sold": 12,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p31a/800/800",
+        "https://picsum.photos/seed/p31b/800/800",
+        "https://picsum.photos/seed/p31c/800/800",
+        "https://picsum.photos/seed/p31d/800/800"
+      ],
+      "attributes": {
+        "sensor": "Full-frame 33MP",
+        "type": "Mirrorless"
+      },
+      "description": "Máy ảnh full-frame nhỏ gọn.",
+      "thumbnail": "https://picsum.photos/seed/p31main/400/400"
+    },
+    {
+      "id": 32,
+      "sku": "SS-QLED-55Q60",
+      "name": "Tivi Samsung QLED 55 inch Q60C",
+      "slug": "samsung-qled-55-q60c",
+      "category_id": 8,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 17990000,
+      "sale_price": 14990000,
+      "cost": 12500000,
+      "stock": 20,
+      "rating_avg": 4.5,
+      "rating_count": 18,
+      "sold": 65,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p32a/800/800",
+        "https://picsum.photos/seed/p32b/800/800",
+        "https://picsum.photos/seed/p32c/800/800",
+        "https://picsum.photos/seed/p32d/800/800"
+      ],
+      "attributes": {
+        "size": "55 inch",
+        "resolution": "4K",
+        "smart_os": "Tizen"
+      },
+      "description": "Chấm lượng tử, thiết kế mỏng nhẹ.",
+      "thumbnail": "https://picsum.photos/seed/p32main/400/400"
+    },
+    {
+      "id": 33,
+      "sku": "BK-SAPIENS-VI",
+      "name": "Sách - Sapiens: Lược sử loài người",
+      "slug": "sach-sapiens",
+      "category_id": 9,
+      "brand_id": 11,
+      "supplier_id": 5,
+      "price": 259000,
+      "sale_price": 199000,
+      "cost": 120000,
+      "stock": 300,
+      "rating_avg": 4.8,
+      "rating_count": 200,
+      "sold": 1500,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p33a/800/800",
+        "https://picsum.photos/seed/p33b/800/800",
+        "https://picsum.photos/seed/p33c/800/800",
+        "https://picsum.photos/seed/p33d/800/800"
+      ],
+      "attributes": {
+        "author": "Yuval Noah Harari",
+        "pages": 512,
+        "language": "vi"
+      },
+      "description": "Cuốn sách lịch sử bán chạy toàn cầu.",
+      "thumbnail": "https://picsum.photos/seed/p33main/400/400"
+    },
+    {
+      "id": 34,
+      "sku": "INN-CLEANSER-150",
+      "name": "Sữa rửa mặt Innisfree Green Tea 150ml",
+      "slug": "innisfree-cleanser-tra-xanh",
+      "category_id": 10,
+      "brand_id": 12,
+      "supplier_id": 6,
+      "price": 320000,
+      "sale_price": 249000,
+      "cost": 140000,
+      "stock": 220,
+      "rating_avg": 4.6,
+      "rating_count": 110,
+      "sold": 830,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p34a/800/800",
+        "https://picsum.photos/seed/p34b/800/800",
+        "https://picsum.photos/seed/p34c/800/800",
+        "https://picsum.photos/seed/p34d/800/800"
+      ],
+      "attributes": {
+        "volume": "150ml",
+        "skin_type": "Da dầu, hỗn hợp"
+      },
+      "description": "Làm sạch dịu nhẹ.",
+      "thumbnail": "https://picsum.photos/seed/p34main/400/400"
+    },
+    {
+      "id": 35,
+      "sku": "LL-KNIFE-SET",
+      "name": "Bộ dao Lock&Lock 5 món",
+      "slug": "lock-and-lock-dao-5-mon",
+      "category_id": 8,
+      "brand_id": 10,
+      "supplier_id": 1,
+      "price": 1490000,
+      "sale_price": 1190000,
+      "cost": 720000,
+      "stock": 60,
+      "rating_avg": 4.5,
+      "rating_count": 32,
+      "sold": 140,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p35a/800/800",
+        "https://picsum.photos/seed/p35b/800/800",
+        "https://picsum.photos/seed/p35c/800/800",
+        "https://picsum.photos/seed/p35d/800/800"
+      ],
+      "attributes": {
+        "material": "Thép không gỉ",
+        "pieces": 5
+      },
+      "description": "Bộ dao inox 304 sắc bén, tay cầm chống trượt.",
+      "thumbnail": "https://picsum.photos/seed/p35main/400/400"
+    },
+    {
+      "id": 36,
+      "sku": "CN-COAT-L",
+      "name": "Áo dạ nữ Canifa dáng dài",
+      "slug": "canifa-ao-da-dang-dai",
+      "category_id": 7,
+      "brand_id": 9,
+      "supplier_id": 4,
+      "price": 2490000,
+      "sale_price": 1890000,
+      "cost": 1100000,
+      "stock": 45,
+      "rating_avg": 4.4,
+      "rating_count": 12,
+      "sold": 35,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p36a/800/800",
+        "https://picsum.photos/seed/p36b/800/800",
+        "https://picsum.photos/seed/p36c/800/800",
+        "https://picsum.photos/seed/p36d/800/800"
+      ],
+      "attributes": {
+        "size": "L",
+        "color": "Nâu"
+      },
+      "description": "Chất dạ ấm, phong cách công sở mùa đông.",
+      "thumbnail": "https://picsum.photos/seed/p36main/400/400"
+    },
+    {
+      "id": 37,
+      "sku": "APP-MAGIC-KB",
+      "name": "Apple Magic Keyboard (Bluetooth)",
+      "slug": "apple-magic-keyboard",
+      "category_id": 3,
+      "brand_id": 1,
+      "supplier_id": 2,
+      "price": 2690000,
+      "sale_price": 2490000,
+      "cost": 2100000,
+      "stock": 70,
+      "rating_avg": 4.6,
+      "rating_count": 40,
+      "sold": 200,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p37a/800/800",
+        "https://picsum.photos/seed/p37b/800/800",
+        "https://picsum.photos/seed/p37c/800/800",
+        "https://picsum.photos/seed/p37d/800/800"
+      ],
+      "attributes": {
+        "color": "Trắng",
+        "connectivity": "Bluetooth"
+      },
+      "description": "Bàn phím không dây cho Mac.",
+      "thumbnail": "https://picsum.photos/seed/p37main/400/400"
+    },
+    {
+      "id": 38,
+      "sku": "SS-SSD-T7-1TB",
+      "name": "Ổ cứng SSD Samsung T7 1TB",
+      "slug": "samsung-ssd-t7-1tb",
+      "category_id": 3,
+      "brand_id": 2,
+      "supplier_id": 1,
+      "price": 2990000,
+      "sale_price": 2390000,
+      "cost": 1900000,
+      "stock": 90,
+      "rating_avg": 4.8,
+      "rating_count": 65,
+      "sold": 380,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p38a/800/800",
+        "https://picsum.photos/seed/p38b/800/800",
+        "https://picsum.photos/seed/p38c/800/800",
+        "https://picsum.photos/seed/p38d/800/800"
+      ],
+      "attributes": {
+        "capacity": "1TB",
+        "interface": "USB 3.2 Gen 2"
+      },
+      "description": "Tốc độ 1050MB/s, nhỏ gọn.",
+      "thumbnail": "https://picsum.photos/seed/p38main/400/400"
+    },
+    {
+      "id": 39,
+      "sku": "XM-BAND-9",
+      "name": "Xiaomi Smart Band 9",
+      "slug": "xiaomi-smart-band-9",
+      "category_id": 3,
+      "brand_id": 3,
+      "supplier_id": 1,
+      "price": 990000,
+      "sale_price": 790000,
+      "cost": 500000,
+      "stock": 250,
+      "rating_avg": 4.5,
+      "rating_count": 210,
+      "sold": 1800,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p39a/800/800",
+        "https://picsum.photos/seed/p39b/800/800",
+        "https://picsum.photos/seed/p39c/800/800",
+        "https://picsum.photos/seed/p39d/800/800"
+      ],
+      "attributes": {
+        "color": "Đen",
+        "battery_days": 21
+      },
+      "description": "Vòng tay theo dõi sức khoẻ, pin 21 ngày.",
+      "thumbnail": "https://picsum.photos/seed/p39main/400/400"
+    },
+    {
+      "id": 40,
+      "sku": "SONY-WF-1000XM5",
+      "name": "Sony WF-1000XM5",
+      "slug": "sony-wf-1000xm5",
+      "category_id": 4,
+      "brand_id": 6,
+      "supplier_id": 1,
+      "price": 6990000,
+      "sale_price": 5990000,
+      "cost": 4800000,
+      "stock": 55,
+      "rating_avg": 4.7,
+      "rating_count": 30,
+      "sold": 165,
+      "is_active": true,
+      "images": [
+        "https://picsum.photos/seed/p40a/800/800",
+        "https://picsum.photos/seed/p40b/800/800",
+        "https://picsum.photos/seed/p40c/800/800",
+        "https://picsum.photos/seed/p40d/800/800"
+      ],
+      "attributes": {
+        "type": "In-ear",
+        "anc": true,
+        "battery_hours": 8
+      },
+      "description": "Tai nghe true wireless chống ồn hàng đầu.",
+      "thumbnail": "https://picsum.photos/seed/p40main/400/400"
+    }
+  ],
+  "inventory": [
+    {
+      "product_id": 1,
+      "warehouse_id": 1,
+      "quantity": 20
+    },
+    {
+      "product_id": 1,
+      "warehouse_id": 3,
+      "quantity": 22
+    },
+    {
+      "product_id": 2,
+      "warehouse_id": 1,
+      "quantity": 30
+    },
+    {
+      "product_id": 2,
+      "warehouse_id": 3,
+      "quantity": 30
+    },
+    {
+      "product_id": 3,
+      "warehouse_id": 1,
+      "quantity": 15
+    },
+    {
+      "product_id": 3,
+      "warehouse_id": 3,
+      "quantity": 10
+    },
+    {
+      "product_id": 6,
+      "warehouse_id": 3,
+      "quantity": 30
+    },
+    {
+      "product_id": 10,
+      "warehouse_id": 1,
+      "quantity": 50
+    },
+    {
+      "product_id": 10,
+      "warehouse_id": 3,
+      "quantity": 50
+    },
+    {
+      "product_id": 13,
+      "warehouse_id": 1,
+      "quantity": 100
+    },
+    {
+      "product_id": 13,
+      "warehouse_id": 2,
+      "quantity": 40
+    },
+    {
+      "product_id": 13,
+      "warehouse_id": 3,
+      "quantity": 60
+    },
+    {
+      "product_id": 21,
+      "warehouse_id": 3,
+      "quantity": 800
+    },
+    {
+      "product_id": 25,
+      "warehouse_id": 1,
+      "quantity": 130
+    },
+    {
+      "product_id": 25,
+      "warehouse_id": 3,
+      "quantity": 130
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "email": "lam.tan@gmail.com",
+      "phone": "0912345678",
+      "full_name": "Phạm Mỹ Duyên",
+      "gender": "female",
+      "dob": "1998-05-12",
+      "role": "customer",
+      "created_at": "2025-03-10T09:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=1"
+    },
+    {
+      "id": 2,
+      "email": "nguyen.van.a@gmail.com",
+      "phone": "0902223333",
+      "full_name": "Nguyễn Văn A",
+      "gender": "male",
+      "dob": "1995-01-20",
+      "role": "customer",
+      "created_at": "2025-04-01T10:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=2"
+    },
+    {
+      "id": 3,
+      "email": "tran.thi.b@gmail.com",
+      "phone": "0987654321",
+      "full_name": "Trần Thị B",
+      "gender": "female",
+      "dob": "1997-07-05",
+      "role": "customer",
+      "created_at": "2025-04-15T11:20:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=3"
+    },
+    {
+      "id": 4,
+      "email": "le.hoang.c@gmail.com",
+      "phone": "0938887777",
+      "full_name": "Lê Hoàng C",
+      "gender": "male",
+      "dob": "1990-11-30",
+      "role": "customer",
+      "created_at": "2025-05-02T14:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=4"
+    },
+    {
+      "id": 5,
+      "email": "pham.minh.d@gmail.com",
+      "phone": "0977111222",
+      "full_name": "Phạm Minh D",
+      "gender": "male",
+      "dob": "1993-09-15",
+      "role": "customer",
+      "created_at": "2025-05-20T08:30:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=5"
+    },
+    {
+      "id": 6,
+      "email": "vo.thi.e@gmail.com",
+      "phone": "0966555444",
+      "full_name": "Võ Thị E",
+      "gender": "female",
+      "dob": "2000-02-25",
+      "role": "customer",
+      "created_at": "2025-06-01T09:45:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=6"
+    },
+    {
+      "id": 7,
+      "email": "hoang.quoc.f@gmail.com",
+      "phone": "0911223344",
+      "full_name": "Hoàng Quốc F",
+      "gender": "male",
+      "dob": "1996-08-12",
+      "role": "customer",
+      "created_at": "2025-06-10T13:15:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=7"
+    },
+    {
+      "id": 8,
+      "email": "dang.thu.g@gmail.com",
+      "phone": "0944556677",
+      "full_name": "Đặng Thu G",
+      "gender": "female",
+      "dob": "1999-12-08",
+      "role": "customer",
+      "created_at": "2025-06-15T16:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=8"
+    },
+    {
+      "id": 9,
+      "email": "bui.van.h@gmail.com",
+      "phone": "0922334455",
+      "full_name": "Bùi Văn H",
+      "gender": "male",
+      "dob": "1991-06-22",
+      "role": "customer",
+      "created_at": "2025-06-20T10:10:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=9"
+    },
+    {
+      "id": 10,
+      "email": "do.thi.i@gmail.com",
+      "phone": "0933445566",
+      "full_name": "Đỗ Thị I",
+      "gender": "female",
+      "dob": "1994-03-17",
+      "role": "customer",
+      "created_at": "2025-07-01T09:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=10"
+    },
+    {
+      "id": 11,
+      "email": "duong.hoai.k@gmail.com",
+      "phone": "0955667788",
+      "full_name": "Dương Hoài K",
+      "gender": "male",
+      "dob": "1988-10-10",
+      "role": "customer",
+      "created_at": "2025-07-05T14:30:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=11"
+    },
+    {
+      "id": 12,
+      "email": "trinh.nhat.l@gmail.com",
+      "phone": "0966778899",
+      "full_name": "Trịnh Nhật L",
+      "gender": "male",
+      "dob": "2001-04-04",
+      "role": "customer",
+      "created_at": "2025-07-08T18:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=12"
+    },
+    {
+      "id": 13,
+      "email": "ly.thanh.m@gmail.com",
+      "phone": "0977889900",
+      "full_name": "Lý Thanh M",
+      "gender": "female",
+      "dob": "1996-05-19",
+      "role": "customer",
+      "created_at": "2025-07-10T09:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=13"
+    },
+    {
+      "id": 14,
+      "email": "phan.gia.n@gmail.com",
+      "phone": "0988990011",
+      "full_name": "Phan Gia N",
+      "gender": "male",
+      "dob": "1992-11-11",
+      "role": "customer",
+      "created_at": "2025-07-12T12:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=14"
+    },
+    {
+      "id": 15,
+      "email": "cao.thi.o@gmail.com",
+      "phone": "0999001122",
+      "full_name": "Cao Thị O",
+      "gender": "female",
+      "dob": "1998-01-02",
+      "role": "customer",
+      "created_at": "2025-07-14T15:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=15"
+    },
+    {
+      "id": 16,
+      "email": "vu.trong.p@gmail.com",
+      "phone": "0900112233",
+      "full_name": "Vũ Trọng P",
+      "gender": "male",
+      "dob": "1989-07-07",
+      "role": "customer",
+      "created_at": "2025-07-15T18:30:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=16"
+    },
+    {
+      "id": 17,
+      "email": "chu.van.q@gmail.com",
+      "phone": "0911002233",
+      "full_name": "Chu Văn Q",
+      "gender": "male",
+      "dob": "1995-09-14",
+      "role": "customer",
+      "created_at": "2025-07-18T10:45:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=17"
+    },
+    {
+      "id": 18,
+      "email": "ho.thi.r@gmail.com",
+      "phone": "0922113344",
+      "full_name": "Hồ Thị R",
+      "gender": "female",
+      "dob": "1997-06-30",
+      "role": "customer",
+      "created_at": "2025-07-19T11:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=18"
+    },
+    {
+      "id": 19,
+      "email": "tran.duy.s@gmail.com",
+      "phone": "0933224455",
+      "full_name": "Trần Duy S",
+      "gender": "male",
+      "dob": "1993-12-25",
+      "role": "customer",
+      "created_at": "2025-07-20T14:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=19"
+    },
+    {
+      "id": 20,
+      "email": "ngo.thi.t@gmail.com",
+      "phone": "0944335566",
+      "full_name": "Ngô Thị T",
+      "gender": "female",
+      "dob": "2000-08-08",
+      "role": "customer",
+      "created_at": "2025-07-21T09:20:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=20"
+    },
+    {
+      "id": 21,
+      "email": "mai.anh.u@gmail.com",
+      "phone": "0955446677",
+      "full_name": "Mai Anh U",
+      "gender": "female",
+      "dob": "1996-04-16",
+      "role": "customer",
+      "created_at": "2025-07-22T13:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=21"
+    },
+    {
+      "id": 22,
+      "email": "quan.van.v@gmail.com",
+      "phone": "0966557788",
+      "full_name": "Quan Văn V",
+      "gender": "male",
+      "dob": "1991-02-28",
+      "role": "customer",
+      "created_at": "2025-07-22T15:30:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=22"
+    },
+    {
+      "id": 23,
+      "email": "admin@shop.vn",
+      "phone": "0900000001",
+      "full_name": "Admin Shop",
+      "gender": "other",
+      "dob": "1985-01-01",
+      "role": "admin",
+      "created_at": "2025-01-01T00:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=admin"
+    },
+    {
+      "id": 24,
+      "email": "staff1@shop.vn",
+      "phone": "0900000002",
+      "full_name": "Nhân viên 1",
+      "gender": "female",
+      "dob": "1994-06-06",
+      "role": "staff",
+      "created_at": "2025-01-15T00:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=staff1"
+    },
+    {
+      "id": 25,
+      "email": "staff2@shop.vn",
+      "phone": "0900000003",
+      "full_name": "Nhân viên 2",
+      "gender": "male",
+      "dob": "1993-03-03",
+      "role": "staff",
+      "created_at": "2025-02-01T00:00:00Z",
+      "avatar": "https://i.pravatar.cc/150?u=staff2"
+    }
+  ],
+  "addresses": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "recipient": "Phạm Mỹ Duyên",
+      "phone": "0912345678",
+      "street": "123 Nguyễn Trãi",
+      "ward": "P.Thanh Xuân Trung",
+      "district": "Q.Thanh Xuân",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "recipient": "Phạm Mỹ Duyên (cơ quan)",
+      "phone": "0912345678",
+      "street": "Tòa nhà Keangnam, đường Phạm Hùng",
+      "ward": "P.Mễ Trì",
+      "district": "Q.Nam Từ Liêm",
+      "province": "Hà Nội",
+      "is_default": false
+    },
+    {
+      "id": 3,
+      "user_id": 2,
+      "recipient": "Nguyễn Văn A",
+      "phone": "0902223333",
+      "street": "56 Lê Văn Sỹ",
+      "ward": "P.13",
+      "district": "Q.3",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 4,
+      "user_id": 3,
+      "recipient": "Trần Thị B",
+      "phone": "0987654321",
+      "street": "88 Trần Duy Hưng",
+      "ward": "P.Trung Hoà",
+      "district": "Q.Cầu Giấy",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 5,
+      "user_id": 4,
+      "recipient": "Lê Hoàng C",
+      "phone": "0938887777",
+      "street": "12 Nguyễn Văn Cừ",
+      "ward": "P.An Hải Bắc",
+      "district": "Q.Sơn Trà",
+      "province": "Đà Nẵng",
+      "is_default": true
+    },
+    {
+      "id": 6,
+      "user_id": 5,
+      "recipient": "Phạm Minh D",
+      "phone": "0977111222",
+      "street": "45 Võ Thị Sáu",
+      "ward": "P.Đa Kao",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 7,
+      "user_id": 6,
+      "recipient": "Võ Thị E",
+      "phone": "0966555444",
+      "street": "20 Nguyễn Huệ",
+      "ward": "P.Bến Nghé",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 8,
+      "user_id": 7,
+      "recipient": "Hoàng Quốc F",
+      "phone": "0911223344",
+      "street": "77 Bà Triệu",
+      "ward": "P.Nguyễn Du",
+      "district": "Q.Hai Bà Trưng",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 9,
+      "user_id": 8,
+      "recipient": "Đặng Thu G",
+      "phone": "0944556677",
+      "street": "34 Cầu Giấy",
+      "ward": "P.Quan Hoa",
+      "district": "Q.Cầu Giấy",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 10,
+      "user_id": 9,
+      "recipient": "Bùi Văn H",
+      "phone": "0922334455",
+      "street": "9 Lê Duẩn",
+      "ward": "P.Bến Nghé",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 11,
+      "user_id": 10,
+      "recipient": "Đỗ Thị I",
+      "phone": "0933445566",
+      "street": "18 Trần Hưng Đạo",
+      "ward": "P.Phan Chu Trinh",
+      "district": "Q.Hoàn Kiếm",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 12,
+      "user_id": 11,
+      "recipient": "Dương Hoài K",
+      "phone": "0955667788",
+      "street": "5 Hai Bà Trưng",
+      "ward": "P.Bến Nghé",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 13,
+      "user_id": 12,
+      "recipient": "Trịnh Nhật L",
+      "phone": "0966778899",
+      "street": "88 Lê Lợi",
+      "ward": "P.Bến Thành",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 14,
+      "user_id": 13,
+      "recipient": "Lý Thanh M",
+      "phone": "0977889900",
+      "street": "22 Nguyễn Chí Thanh",
+      "ward": "P.Láng Thượng",
+      "district": "Q.Đống Đa",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 15,
+      "user_id": 14,
+      "recipient": "Phan Gia N",
+      "phone": "0988990011",
+      "street": "10 Hoàng Diệu",
+      "ward": "P.Hải Châu 1",
+      "district": "Q.Hải Châu",
+      "province": "Đà Nẵng",
+      "is_default": true
+    },
+    {
+      "id": 16,
+      "user_id": 15,
+      "recipient": "Cao Thị O",
+      "phone": "0999001122",
+      "street": "15 Xuân Thuỷ",
+      "ward": "P.Dịch Vọng Hậu",
+      "district": "Q.Cầu Giấy",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 17,
+      "user_id": 16,
+      "recipient": "Vũ Trọng P",
+      "phone": "0900112233",
+      "street": "199 Cách Mạng Tháng 8",
+      "ward": "P.5",
+      "district": "Q.3",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 18,
+      "user_id": 17,
+      "recipient": "Chu Văn Q",
+      "phone": "0911002233",
+      "street": "27 Nguyễn Văn Trỗi",
+      "ward": "P.11",
+      "district": "Q.Phú Nhuận",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 19,
+      "user_id": 18,
+      "recipient": "Hồ Thị R",
+      "phone": "0922113344",
+      "street": "39 Nguyễn Thị Minh Khai",
+      "ward": "P.Bến Nghé",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 20,
+      "user_id": 19,
+      "recipient": "Trần Duy S",
+      "phone": "0933224455",
+      "street": "8 Đội Cấn",
+      "ward": "P.Ngọc Hà",
+      "district": "Q.Ba Đình",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 21,
+      "user_id": 20,
+      "recipient": "Ngô Thị T",
+      "phone": "0944335566",
+      "street": "12 Nguyễn Văn Linh",
+      "ward": "P.Tân Thuận Tây",
+      "district": "Q.7",
+      "province": "TP.HCM",
+      "is_default": true
+    },
+    {
+      "id": 22,
+      "user_id": 21,
+      "recipient": "Mai Anh U",
+      "phone": "0955446677",
+      "street": "45 Trần Phú",
+      "ward": "P.Điện Biên",
+      "district": "Q.Ba Đình",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 23,
+      "user_id": 22,
+      "recipient": "Quan Văn V",
+      "phone": "0966557788",
+      "street": "23 Nguyễn Văn Cừ",
+      "ward": "P.Ngọc Lâm",
+      "district": "Q.Long Biên",
+      "province": "Hà Nội",
+      "is_default": true
+    },
+    {
+      "id": 24,
+      "user_id": 2,
+      "recipient": "Nguyễn Văn A (nhà mẹ)",
+      "phone": "0902223333",
+      "street": "10 Điện Biên Phủ",
+      "ward": "P.Đa Kao",
+      "district": "Q.1",
+      "province": "TP.HCM",
+      "is_default": false
+    },
+    {
+      "id": 25,
+      "user_id": 4,
+      "recipient": "Lê Hoàng C (chi nhánh)",
+      "phone": "0938887777",
+      "street": "56 Hùng Vương",
+      "ward": "P.Vĩnh Trung",
+      "district": "Q.Thanh Khê",
+      "province": "Đà Nẵng",
+      "is_default": false
+    },
+    {
+      "id": 26,
+      "user_id": 5,
+      "recipient": "Phạm Minh D (kho)",
+      "phone": "0977111222",
+      "street": "KCN Vĩnh Lộc",
+      "ward": "P.Bình Hưng Hoà B",
+      "district": "Q.Bình Tân",
+      "province": "TP.HCM",
+      "is_default": false
+    },
+    {
+      "id": 27,
+      "user_id": 6,
+      "recipient": "Võ Thị E (bạn)",
+      "phone": "0966555444",
+      "street": "18 Sư Vạn Hạnh",
+      "ward": "P.9",
+      "district": "Q.10",
+      "province": "TP.HCM",
+      "is_default": false
+    },
+    {
+      "id": 28,
+      "user_id": 10,
+      "recipient": "Đỗ Thị I (nhà bố mẹ)",
+      "phone": "0933445566",
+      "street": "77 Lê Hồng Phong",
+      "ward": "P.Đông Sơn",
+      "district": "TP.Thanh Hoá",
+      "province": "Thanh Hoá",
+      "is_default": false
+    },
+    {
+      "id": 29,
+      "user_id": 14,
+      "recipient": "Phan Gia N (văn phòng)",
+      "phone": "0988990011",
+      "street": "Toà nhà FPT Complex",
+      "ward": "P.Hoà Hải",
+      "district": "Q.Ngũ Hành Sơn",
+      "province": "Đà Nẵng",
+      "is_default": false
+    },
+    {
+      "id": 30,
+      "user_id": 3,
+      "recipient": "Trần Thị B (nhà chồng)",
+      "phone": "0987654321",
+      "street": "12 Nguyễn Trãi",
+      "ward": "P.Thượng Đình",
+      "district": "Q.Thanh Xuân",
+      "province": "Hà Nội",
+      "is_default": false
+    }
+  ],
+  "vouchers": [
+    {
+      "id": 1,
+      "code": "WELCOME50",
+      "type": "percent",
+      "value": 5,
+      "max_discount": 50000,
+      "min_order": 200000,
+      "quota": 1000,
+      "used": 320,
+      "starts_at": "2026-01-01T00:00:00Z",
+      "expires_at": "2026-12-31T23:59:59Z",
+      "description": "Giảm 5% tối đa 50k cho đơn từ 200k (KH mới)"
+    },
+    {
+      "id": 2,
+      "code": "FREESHIP",
+      "type": "shipping",
+      "value": 30000,
+      "max_discount": 30000,
+      "min_order": 300000,
+      "quota": 5000,
+      "used": 1210,
+      "starts_at": "2026-06-01T00:00:00Z",
+      "expires_at": "2026-08-31T23:59:59Z",
+      "description": "Miễn phí vận chuyển tối đa 30k"
+    },
+    {
+      "id": 3,
+      "code": "SUMMER10",
+      "type": "percent",
+      "value": 10,
+      "max_discount": 200000,
+      "min_order": 500000,
+      "quota": 2000,
+      "used": 456,
+      "starts_at": "2026-06-01T00:00:00Z",
+      "expires_at": "2026-08-31T23:59:59Z",
+      "description": "Giảm 10% tối đa 200k mùa hè"
+    },
+    {
+      "id": 4,
+      "code": "PHONE500K",
+      "type": "fixed",
+      "value": 500000,
+      "max_discount": 500000,
+      "min_order": 10000000,
+      "quota": 500,
+      "used": 88,
+      "starts_at": "2026-07-01T00:00:00Z",
+      "expires_at": "2026-07-31T23:59:59Z",
+      "description": "Giảm 500k khi mua điện thoại từ 10 triệu"
+    },
+    {
+      "id": 5,
+      "code": "LAPTOP1M",
+      "type": "fixed",
+      "value": 1000000,
+      "max_discount": 1000000,
+      "min_order": 20000000,
+      "quota": 300,
+      "used": 42,
+      "starts_at": "2026-07-01T00:00:00Z",
+      "expires_at": "2026-08-31T23:59:59Z",
+      "description": "Giảm 1 triệu cho laptop từ 20 triệu"
+    },
+    {
+      "id": 6,
+      "code": "BOOKLOVER",
+      "type": "percent",
+      "value": 15,
+      "max_discount": 50000,
+      "min_order": 150000,
+      "quota": 1000,
+      "used": 289,
+      "starts_at": "2026-05-01T00:00:00Z",
+      "expires_at": "2026-12-31T23:59:59Z",
+      "description": "Giảm 15% khi mua sách"
+    },
+    {
+      "id": 7,
+      "code": "FASHION20",
+      "type": "percent",
+      "value": 20,
+      "max_discount": 300000,
+      "min_order": 800000,
+      "quota": 800,
+      "used": 155,
+      "starts_at": "2026-07-01T00:00:00Z",
+      "expires_at": "2026-09-30T23:59:59Z",
+      "description": "Giảm 20% thời trang"
+    },
+    {
+      "id": 8,
+      "code": "BEAUTY100",
+      "type": "fixed",
+      "value": 100000,
+      "max_discount": 100000,
+      "min_order": 500000,
+      "quota": 600,
+      "used": 122,
+      "starts_at": "2026-06-15T00:00:00Z",
+      "expires_at": "2026-08-15T23:59:59Z",
+      "description": "Giảm 100k mỹ phẩm"
+    }
+  ],
+  "carts": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "updated_at": "2026-07-23T20:15:00Z",
+      "items": [
+        {
+          "product_id": 10,
+          "quantity": 1,
+          "unit_price": 5990000
+        },
+        {
+          "product_id": 14,
+          "quantity": 2,
+          "unit_price": 349000
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "user_id": 6,
+      "updated_at": "2026-07-24T09:30:00Z",
+      "items": [
+        {
+          "product_id": 25,
+          "quantity": 1,
+          "unit_price": 299000
+        },
+        {
+          "product_id": 34,
+          "quantity": 1,
+          "unit_price": 249000
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "user_id": 11,
+      "updated_at": "2026-07-24T11:00:00Z",
+      "items": [
+        {
+          "product_id": 7,
+          "quantity": 1,
+          "unit_price": 50990000
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "user_id": 15,
+      "updated_at": "2026-07-23T22:00:00Z",
+      "items": [
+        {
+          "product_id": 21,
+          "quantity": 2,
+          "unit_price": 89000
+        },
+        {
+          "product_id": 22,
+          "quantity": 1,
+          "unit_price": 65000
+        },
+        {
+          "product_id": 33,
+          "quantity": 1,
+          "unit_price": 199000
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "user_id": 18,
+      "updated_at": "2026-07-24T13:45:00Z",
+      "items": [
+        {
+          "product_id": 30,
+          "quantity": 1,
+          "unit_price": 1590000
+        },
+        {
+          "product_id": 15,
+          "quantity": 2,
+          "unit_price": 349000
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "user_id": 20,
+      "updated_at": "2026-07-24T14:20:00Z",
+      "items": [
+        {
+          "product_id": 39,
+          "quantity": 1,
+          "unit_price": 790000
+        }
+      ]
+    }
+  ],
+  "wishlists": [
+    {
+      "id": 1,
+      "user_id": 1,
+      "product_id": 6,
+      "added_at": "2026-07-10T09:00:00Z"
+    },
+    {
+      "id": 2,
+      "user_id": 1,
+      "product_id": 26,
+      "added_at": "2026-07-12T10:15:00Z"
+    },
+    {
+      "id": 3,
+      "user_id": 3,
+      "product_id": 3,
+      "added_at": "2026-07-05T11:00:00Z"
+    },
+    {
+      "id": 4,
+      "user_id": 6,
+      "product_id": 17,
+      "added_at": "2026-07-15T09:30:00Z"
+    },
+    {
+      "id": 5,
+      "user_id": 8,
+      "product_id": 32,
+      "added_at": "2026-07-08T20:00:00Z"
+    },
+    {
+      "id": 6,
+      "user_id": 12,
+      "product_id": 9,
+      "added_at": "2026-07-20T14:00:00Z"
+    },
+    {
+      "id": 7,
+      "user_id": 15,
+      "product_id": 23,
+      "added_at": "2026-07-11T16:00:00Z"
+    },
+    {
+      "id": 8,
+      "user_id": 20,
+      "product_id": 40,
+      "added_at": "2026-07-18T21:00:00Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": 1001,
+      "user_id": 2,
+      "address_id": 3,
+      "voucher_code": "SUMMER10",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 26490000,
+      "discount": 200000,
+      "shipping_fee": 0,
+      "total": 26290000,
+      "placed_at": "2026-06-05T09:12:00Z",
+      "delivered_at": "2026-06-08T14:00:00Z",
+      "note": "Giao giờ hành chính",
+      "items": [
+        {
+          "product_id": 6,
+          "sku": "MBA-M3-13-256",
+          "name": "MacBook Air M3 13 inch 256GB",
+          "quantity": 1,
+          "unit_price": 26490000,
+          "line_total": 26490000
+        }
+      ]
+    },
+    {
+      "id": 1002,
+      "user_id": 3,
+      "address_id": 4,
+      "voucher_code": "FREESHIP",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 8290000,
+      "discount": 30000,
+      "shipping_fee": 30000,
+      "total": 8290000,
+      "placed_at": "2026-06-10T13:20:00Z",
+      "delivered_at": "2026-06-12T10:30:00Z",
+      "items": [
+        {
+          "product_id": 11,
+          "sku": "SONY-WH1000XM5",
+          "name": "Sony WH-1000XM5",
+          "quantity": 1,
+          "unit_price": 7490000,
+          "line_total": 7490000
+        },
+        {
+          "product_id": 13,
+          "sku": "ANK-CHG-65W",
+          "name": "Anker Nano II 65W",
+          "quantity": 1,
+          "unit_price": 790000,
+          "line_total": 790000
+        }
+      ]
+    },
+    {
+      "id": 1003,
+      "user_id": 4,
+      "address_id": 5,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 14990000,
+      "discount": 0,
+      "shipping_fee": 40000,
+      "total": 15030000,
+      "placed_at": "2026-06-15T16:00:00Z",
+      "delivered_at": "2026-06-19T09:00:00Z",
+      "items": [
+        {
+          "product_id": 32,
+          "sku": "SS-QLED-55Q60",
+          "name": "Tivi Samsung QLED 55 inch Q60C",
+          "quantity": 1,
+          "unit_price": 14990000,
+          "line_total": 14990000
+        }
+      ]
+    },
+    {
+      "id": 1004,
+      "user_id": 5,
+      "address_id": 6,
+      "voucher_code": "PHONE500K",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 30990000,
+      "discount": 500000,
+      "shipping_fee": 0,
+      "total": 30490000,
+      "placed_at": "2026-06-20T09:00:00Z",
+      "delivered_at": "2026-06-22T15:00:00Z",
+      "items": [
+        {
+          "product_id": 1,
+          "sku": "IP15PM-256-BLK",
+          "name": "iPhone 15 Pro Max 256GB",
+          "quantity": 1,
+          "unit_price": 30990000,
+          "line_total": 30990000
+        }
+      ]
+    },
+    {
+      "id": 1005,
+      "user_id": 6,
+      "address_id": 7,
+      "voucher_code": "BEAUTY100",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 798000,
+      "discount": 100000,
+      "shipping_fee": 25000,
+      "total": 723000,
+      "placed_at": "2026-06-25T10:30:00Z",
+      "delivered_at": "2026-06-28T13:00:00Z",
+      "items": [
+        {
+          "product_id": 25,
+          "sku": "INN-SUNSCREEN-50",
+          "name": "Kem chống nắng Innisfree SPF50+",
+          "quantity": 1,
+          "unit_price": 299000,
+          "line_total": 299000
+        },
+        {
+          "product_id": 34,
+          "sku": "INN-CLEANSER-150",
+          "name": "Sữa rửa mặt Innisfree Green Tea 150ml",
+          "quantity": 2,
+          "unit_price": 249000,
+          "line_total": 498000
+        }
+      ]
+    },
+    {
+      "id": 1006,
+      "user_id": 7,
+      "address_id": 8,
+      "voucher_code": "BOOKLOVER",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 353000,
+      "discount": 50000,
+      "shipping_fee": 20000,
+      "total": 323000,
+      "placed_at": "2026-07-01T14:00:00Z",
+      "delivered_at": "2026-07-04T11:20:00Z",
+      "items": [
+        {
+          "product_id": 21,
+          "sku": "BK-DACNHANTAM",
+          "name": "Sách - Đắc Nhân Tâm",
+          "quantity": 1,
+          "unit_price": 89000,
+          "line_total": 89000
+        },
+        {
+          "product_id": 22,
+          "sku": "BK-NHAGIAKIM",
+          "name": "Sách - Nhà Giả Kim",
+          "quantity": 1,
+          "unit_price": 65000,
+          "line_total": 65000
+        },
+        {
+          "product_id": 33,
+          "sku": "BK-SAPIENS-VI",
+          "name": "Sách - Sapiens: Lược sử loài người",
+          "quantity": 1,
+          "unit_price": 199000,
+          "line_total": 199000
+        }
+      ]
+    },
+    {
+      "id": 1007,
+      "user_id": 8,
+      "address_id": 9,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 4790000,
+      "discount": 0,
+      "shipping_fee": 25000,
+      "total": 4815000,
+      "placed_at": "2026-07-02T09:15:00Z",
+      "delivered_at": "2026-07-05T13:00:00Z",
+      "items": [
+        {
+          "product_id": 12,
+          "sku": "SS-BUDS3PRO",
+          "name": "Samsung Galaxy Buds3 Pro",
+          "quantity": 1,
+          "unit_price": 4790000,
+          "line_total": 4790000
+        }
+      ]
+    },
+    {
+      "id": 1008,
+      "user_id": 9,
+      "address_id": 10,
+      "voucher_code": "FASHION20",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 1097000,
+      "discount": 219400,
+      "shipping_fee": 25000,
+      "total": 902600,
+      "placed_at": "2026-07-03T11:00:00Z",
+      "delivered_at": "2026-07-06T10:00:00Z",
+      "items": [
+        {
+          "product_id": 15,
+          "sku": "UN-MENSHIRT-L",
+          "name": "Áo thun nam Uniqlo AIRism",
+          "quantity": 2,
+          "unit_price": 349000,
+          "line_total": 698000
+        },
+        {
+          "product_id": 16,
+          "sku": "UN-JEANS-32",
+          "name": "Quần Jean nam Uniqlo Slim Fit",
+          "quantity": 1,
+          "unit_price": 399000,
+          "line_total": 399000
+        }
+      ]
+    },
+    {
+      "id": 1009,
+      "user_id": 10,
+      "address_id": 11,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 990000,
+      "discount": 0,
+      "shipping_fee": 20000,
+      "total": 1010000,
+      "placed_at": "2026-07-05T18:00:00Z",
+      "delivered_at": "2026-07-08T14:00:00Z",
+      "items": [
+        {
+          "product_id": 29,
+          "sku": "ANK-POWERBANK-20K",
+          "name": "Sạc dự phòng Anker 20000mAh",
+          "quantity": 1,
+          "unit_price": 990000,
+          "line_total": 990000
+        }
+      ]
+    },
+    {
+      "id": 1010,
+      "user_id": 11,
+      "address_id": 12,
+      "voucher_code": "LAPTOP1M",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 50990000,
+      "discount": 1000000,
+      "shipping_fee": 0,
+      "total": 49990000,
+      "placed_at": "2026-07-06T09:00:00Z",
+      "delivered_at": "2026-07-09T11:30:00Z",
+      "items": [
+        {
+          "product_id": 7,
+          "sku": "MBP-M3P-14-512",
+          "name": "MacBook Pro 14 M3 Pro 512GB",
+          "quantity": 1,
+          "unit_price": 50990000,
+          "line_total": 50990000
+        }
+      ]
+    },
+    {
+      "id": 1011,
+      "user_id": 12,
+      "address_id": 13,
+      "voucher_code": null,
+      "status": "shipping",
+      "payment_status": "paid",
+      "subtotal": 23990000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 23990000,
+      "placed_at": "2026-07-20T10:00:00Z",
+      "items": [
+        {
+          "product_id": 9,
+          "sku": "ASUS-TUF-A15",
+          "name": "Asus TUF Gaming A15",
+          "quantity": 1,
+          "unit_price": 23990000,
+          "line_total": 23990000
+        }
+      ]
+    },
+    {
+      "id": 1012,
+      "user_id": 13,
+      "address_id": 14,
+      "voucher_code": "SUMMER10",
+      "status": "shipping",
+      "payment_status": "paid",
+      "subtotal": 1590000,
+      "discount": 159000,
+      "shipping_fee": 25000,
+      "total": 1456000,
+      "placed_at": "2026-07-21T12:30:00Z",
+      "items": [
+        {
+          "product_id": 30,
+          "sku": "UN-JACKET-XL",
+          "name": "Áo khoác Uniqlo Ultra Light Down",
+          "quantity": 1,
+          "unit_price": 1590000,
+          "line_total": 1590000
+        }
+      ]
+    },
+    {
+      "id": 1013,
+      "user_id": 14,
+      "address_id": 15,
+      "voucher_code": null,
+      "status": "processing",
+      "payment_status": "paid",
+      "subtotal": 18990000,
+      "discount": 0,
+      "shipping_fee": 30000,
+      "total": 19020000,
+      "placed_at": "2026-07-22T09:00:00Z",
+      "items": [
+        {
+          "product_id": 28,
+          "sku": "SS-TAB-S9-256",
+          "name": "Samsung Galaxy Tab S9 256GB",
+          "quantity": 1,
+          "unit_price": 18990000,
+          "line_total": 18990000
+        }
+      ]
+    },
+    {
+      "id": 1014,
+      "user_id": 15,
+      "address_id": 16,
+      "voucher_code": "BOOKLOVER",
+      "status": "processing",
+      "payment_status": "pending",
+      "subtotal": 154000,
+      "discount": 23100,
+      "shipping_fee": 15000,
+      "total": 145900,
+      "placed_at": "2026-07-23T20:00:00Z",
+      "items": [
+        {
+          "product_id": 22,
+          "sku": "BK-NHAGIAKIM",
+          "name": "Sách - Nhà Giả Kim",
+          "quantity": 1,
+          "unit_price": 65000,
+          "line_total": 65000
+        },
+        {
+          "product_id": 21,
+          "sku": "BK-DACNHANTAM",
+          "name": "Sách - Đắc Nhân Tâm",
+          "quantity": 1,
+          "unit_price": 89000,
+          "line_total": 89000
+        }
+      ]
+    },
+    {
+      "id": 1015,
+      "user_id": 16,
+      "address_id": 17,
+      "voucher_code": "WELCOME50",
+      "status": "processing",
+      "payment_status": "paid",
+      "subtotal": 2490000,
+      "discount": 50000,
+      "shipping_fee": 20000,
+      "total": 2460000,
+      "placed_at": "2026-07-23T22:00:00Z",
+      "items": [
+        {
+          "product_id": 37,
+          "sku": "APP-MAGIC-KB",
+          "name": "Apple Magic Keyboard",
+          "quantity": 1,
+          "unit_price": 2490000,
+          "line_total": 2490000
+        }
+      ]
+    },
+    {
+      "id": 1016,
+      "user_id": 17,
+      "address_id": 18,
+      "voucher_code": null,
+      "status": "processing",
+      "payment_status": "paid",
+      "subtotal": 2390000,
+      "discount": 0,
+      "shipping_fee": 20000,
+      "total": 2410000,
+      "placed_at": "2026-07-24T08:30:00Z",
+      "items": [
+        {
+          "product_id": 38,
+          "sku": "SS-SSD-T7-1TB",
+          "name": "Ổ cứng SSD Samsung T7 1TB",
+          "quantity": 1,
+          "unit_price": 2390000,
+          "line_total": 2390000
+        }
+      ]
+    },
+    {
+      "id": 1017,
+      "user_id": 18,
+      "address_id": 19,
+      "voucher_code": null,
+      "status": "cancelled",
+      "payment_status": "refunded",
+      "subtotal": 3690000,
+      "discount": 0,
+      "shipping_fee": 25000,
+      "total": 3715000,
+      "placed_at": "2026-07-10T14:00:00Z",
+      "cancelled_at": "2026-07-11T09:00:00Z",
+      "cancel_reason": "Khách đổi ý",
+      "items": [
+        {
+          "product_id": 27,
+          "sku": "APP-PENCIL-2",
+          "name": "Apple Pencil (thế hệ 2)",
+          "quantity": 1,
+          "unit_price": 3690000,
+          "line_total": 3690000
+        }
+      ]
+    },
+    {
+      "id": 1018,
+      "user_id": 19,
+      "address_id": 20,
+      "voucher_code": "FREESHIP",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 5990000,
+      "discount": 30000,
+      "shipping_fee": 30000,
+      "total": 5990000,
+      "placed_at": "2026-07-12T11:00:00Z",
+      "delivered_at": "2026-07-14T13:30:00Z",
+      "items": [
+        {
+          "product_id": 10,
+          "sku": "APP-AIRPODS-P2",
+          "name": "Apple AirPods Pro 2 (USB-C)",
+          "quantity": 1,
+          "unit_price": 5990000,
+          "line_total": 5990000
+        }
+      ]
+    },
+    {
+      "id": 1019,
+      "user_id": 20,
+      "address_id": 21,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 790000,
+      "discount": 0,
+      "shipping_fee": 20000,
+      "total": 810000,
+      "placed_at": "2026-07-14T15:00:00Z",
+      "delivered_at": "2026-07-17T10:00:00Z",
+      "items": [
+        {
+          "product_id": 39,
+          "sku": "XM-BAND-9",
+          "name": "Xiaomi Smart Band 9",
+          "quantity": 1,
+          "unit_price": 790000,
+          "line_total": 790000
+        }
+      ]
+    },
+    {
+      "id": 1020,
+      "user_id": 21,
+      "address_id": 22,
+      "voucher_code": "FASHION20",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 2338000,
+      "discount": 300000,
+      "shipping_fee": 25000,
+      "total": 2063000,
+      "placed_at": "2026-07-16T09:30:00Z",
+      "delivered_at": "2026-07-19T11:00:00Z",
+      "items": [
+        {
+          "product_id": 17,
+          "sku": "CN-DRESS-M",
+          "name": "Đầm nữ Canifa dáng suông",
+          "quantity": 1,
+          "unit_price": 699000,
+          "line_total": 699000
+        },
+        {
+          "product_id": 18,
+          "sku": "CN-BLOUSE-S",
+          "name": "Áo sơ mi nữ Canifa lụa",
+          "quantity": 1,
+          "unit_price": 449000,
+          "line_total": 449000
+        },
+        {
+          "product_id": 36,
+          "sku": "CN-COAT-L",
+          "name": "Áo dạ nữ Canifa dáng dài",
+          "quantity": 1,
+          "unit_price": 1190000,
+          "line_total": 1190000
+        }
+      ]
+    },
+    {
+      "id": 1021,
+      "user_id": 22,
+      "address_id": 23,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 1190000,
+      "discount": 0,
+      "shipping_fee": 25000,
+      "total": 1215000,
+      "placed_at": "2026-07-18T20:00:00Z",
+      "delivered_at": "2026-07-21T13:00:00Z",
+      "items": [
+        {
+          "product_id": 35,
+          "sku": "LL-KNIFE-SET",
+          "name": "Bộ dao Lock&Lock 5 món",
+          "quantity": 1,
+          "unit_price": 1190000,
+          "line_total": 1190000
+        }
+      ]
+    },
+    {
+      "id": 1022,
+      "user_id": 1,
+      "address_id": 1,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 21490000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 21490000,
+      "placed_at": "2026-06-30T10:00:00Z",
+      "delivered_at": "2026-07-02T09:00:00Z",
+      "items": [
+        {
+          "product_id": 2,
+          "sku": "IP15-128-BLU",
+          "name": "iPhone 15 128GB",
+          "quantity": 1,
+          "unit_price": 21490000,
+          "line_total": 21490000
+        }
+      ]
+    },
+    {
+      "id": 1023,
+      "user_id": 4,
+      "address_id": 25,
+      "voucher_code": "FREESHIP",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 390000,
+      "discount": 30000,
+      "shipping_fee": 30000,
+      "total": 390000,
+      "placed_at": "2026-07-08T12:00:00Z",
+      "delivered_at": "2026-07-10T15:30:00Z",
+      "items": [
+        {
+          "product_id": 19,
+          "sku": "LL-BOTTLE-500",
+          "name": "Bình giữ nhiệt Lock&Lock 500ml",
+          "quantity": 1,
+          "unit_price": 390000,
+          "line_total": 390000
+        }
+      ]
+    },
+    {
+      "id": 1024,
+      "user_id": 5,
+      "address_id": 26,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 549000,
+      "discount": 0,
+      "shipping_fee": 20000,
+      "total": 569000,
+      "placed_at": "2026-07-13T09:00:00Z",
+      "delivered_at": "2026-07-16T11:00:00Z",
+      "items": [
+        {
+          "product_id": 20,
+          "sku": "LL-LUNCHBOX-3",
+          "name": "Bộ hộp cơm Lock&Lock 3 ngăn",
+          "quantity": 1,
+          "unit_price": 549000,
+          "line_total": 549000
+        }
+      ]
+    },
+    {
+      "id": 1025,
+      "user_id": 7,
+      "address_id": 8,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 380000,
+      "discount": 0,
+      "shipping_fee": 15000,
+      "total": 395000,
+      "placed_at": "2026-07-15T14:00:00Z",
+      "delivered_at": "2026-07-18T13:00:00Z",
+      "items": [
+        {
+          "product_id": 23,
+          "sku": "BK-CLEANCODE",
+          "name": "Clean Code",
+          "quantity": 1,
+          "unit_price": 380000,
+          "line_total": 380000
+        }
+      ]
+    },
+    {
+      "id": 1026,
+      "user_id": 10,
+      "address_id": 28,
+      "voucher_code": "SUMMER10",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 549000,
+      "discount": 54900,
+      "shipping_fee": 30000,
+      "total": 524100,
+      "placed_at": "2026-07-19T10:00:00Z",
+      "delivered_at": "2026-07-23T09:00:00Z",
+      "items": [
+        {
+          "product_id": 24,
+          "sku": "INN-GREEN-TEA-SR",
+          "name": "Serum Innisfree Green Tea",
+          "quantity": 1,
+          "unit_price": 549000,
+          "line_total": 549000
+        }
+      ]
+    },
+    {
+      "id": 1027,
+      "user_id": 13,
+      "address_id": 14,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 10990000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 10990000,
+      "placed_at": "2026-06-28T09:00:00Z",
+      "delivered_at": "2026-06-30T13:00:00Z",
+      "items": [
+        {
+          "product_id": 26,
+          "sku": "APP-WATCH-S9-45",
+          "name": "Apple Watch Series 9 45mm GPS",
+          "quantity": 1,
+          "unit_price": 10990000,
+          "line_total": 10990000
+        }
+      ]
+    },
+    {
+      "id": 1028,
+      "user_id": 14,
+      "address_id": 29,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 52990000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 52990000,
+      "placed_at": "2026-07-01T09:00:00Z",
+      "delivered_at": "2026-07-04T13:30:00Z",
+      "items": [
+        {
+          "product_id": 31,
+          "sku": "SONY-A7C2-BODY",
+          "name": "Sony A7C II Body",
+          "quantity": 1,
+          "unit_price": 52990000,
+          "line_total": 52990000
+        }
+      ]
+    },
+    {
+      "id": 1029,
+      "user_id": 6,
+      "address_id": 27,
+      "voucher_code": null,
+      "status": "returned",
+      "payment_status": "refunded",
+      "subtotal": 5990000,
+      "discount": 0,
+      "shipping_fee": 25000,
+      "total": 6015000,
+      "placed_at": "2026-06-18T11:00:00Z",
+      "delivered_at": "2026-06-21T13:00:00Z",
+      "returned_at": "2026-06-24T10:00:00Z",
+      "return_reason": "Sản phẩm không đúng mô tả",
+      "items": [
+        {
+          "product_id": 40,
+          "sku": "SONY-WF-1000XM5",
+          "name": "Sony WF-1000XM5",
+          "quantity": 1,
+          "unit_price": 5990000,
+          "line_total": 5990000
+        }
+      ]
+    },
+    {
+      "id": 1030,
+      "user_id": 8,
+      "address_id": 9,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 8990000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 8990000,
+      "placed_at": "2026-07-11T09:00:00Z",
+      "delivered_at": "2026-07-14T14:00:00Z",
+      "items": [
+        {
+          "product_id": 5,
+          "sku": "SS-A55-128",
+          "name": "Samsung Galaxy A55 5G 128GB",
+          "quantity": 1,
+          "unit_price": 8990000,
+          "line_total": 8990000
+        }
+      ]
+    },
+    {
+      "id": 1031,
+      "user_id": 9,
+      "address_id": 10,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 14490000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 14490000,
+      "placed_at": "2026-06-22T11:00:00Z",
+      "delivered_at": "2026-06-25T09:30:00Z",
+      "items": [
+        {
+          "product_id": 4,
+          "sku": "XM-14T-256",
+          "name": "Xiaomi 14T Pro",
+          "quantity": 1,
+          "unit_price": 14490000,
+          "line_total": 14490000
+        }
+      ]
+    },
+    {
+      "id": 1032,
+      "user_id": 11,
+      "address_id": 12,
+      "voucher_code": "LAPTOP1M",
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 39990000,
+      "discount": 1000000,
+      "shipping_fee": 0,
+      "total": 38990000,
+      "placed_at": "2026-06-12T10:30:00Z",
+      "delivered_at": "2026-06-15T13:00:00Z",
+      "items": [
+        {
+          "product_id": 8,
+          "sku": "DELL-XPS13-9340",
+          "name": "Dell XPS 13 9340",
+          "quantity": 1,
+          "unit_price": 39990000,
+          "line_total": 39990000
+        }
+      ]
+    },
+    {
+      "id": 1033,
+      "user_id": 12,
+      "address_id": 13,
+      "voucher_code": null,
+      "status": "delivered",
+      "payment_status": "paid",
+      "subtotal": 31490000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 31490000,
+      "placed_at": "2026-06-25T14:00:00Z",
+      "delivered_at": "2026-06-28T11:00:00Z",
+      "items": [
+        {
+          "product_id": 3,
+          "sku": "SS-S24U-512-GRY",
+          "name": "Samsung Galaxy S24 Ultra",
+          "quantity": 1,
+          "unit_price": 31490000,
+          "line_total": 31490000
+        }
+      ]
+    },
+    {
+      "id": 1034,
+      "user_id": 3,
+      "address_id": 30,
+      "voucher_code": "WELCOME50",
+      "status": "processing",
+      "payment_status": "pending",
+      "subtotal": 1180000,
+      "discount": 50000,
+      "shipping_fee": 25000,
+      "total": 1155000,
+      "placed_at": "2026-07-24T10:00:00Z",
+      "items": [
+        {
+          "product_id": 15,
+          "sku": "UN-MENSHIRT-L",
+          "name": "Áo thun nam Uniqlo AIRism",
+          "quantity": 2,
+          "unit_price": 349000,
+          "line_total": 698000
+        },
+        {
+          "product_id": 25,
+          "sku": "INN-SUNSCREEN-50",
+          "name": "Kem chống nắng Innisfree",
+          "quantity": 1,
+          "unit_price": 299000,
+          "line_total": 299000
+        },
+        {
+          "product_id": 14,
+          "sku": "ANK-CABLE-C2L",
+          "name": "Cáp Anker C to Lightning",
+          "quantity": 1,
+          "unit_price": 349000,
+          "line_total": 349000
+        }
+      ]
+    },
+    {
+      "id": 1035,
+      "user_id": 1,
+      "address_id": 1,
+      "voucher_code": null,
+      "status": "pending",
+      "payment_status": "pending",
+      "subtotal": 4790000,
+      "discount": 0,
+      "shipping_fee": 0,
+      "total": 4790000,
+      "placed_at": "2026-07-24T14:30:00Z",
+      "items": [
+        {
+          "product_id": 12,
+          "sku": "SS-BUDS3PRO",
+          "name": "Samsung Galaxy Buds3 Pro",
+          "quantity": 1,
+          "unit_price": 4790000,
+          "line_total": 4790000
+        }
+      ]
+    }
+  ],
+  "payments": [
+    {
+      "id": 1,
+      "order_id": 1001,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 26290000,
+      "status": "success",
+      "paid_at": "2026-06-05T09:13:00Z"
+    },
+    {
+      "id": 2,
+      "order_id": 1002,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 8290000,
+      "status": "success",
+      "paid_at": "2026-06-10T13:21:00Z"
+    },
+    {
+      "id": 3,
+      "order_id": 1003,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 15030000,
+      "status": "success",
+      "paid_at": "2026-06-19T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "order_id": 1004,
+      "method": "vnpay",
+      "provider": "VNPAY",
+      "amount": 30490000,
+      "status": "success",
+      "paid_at": "2026-06-20T09:02:00Z"
+    },
+    {
+      "id": 5,
+      "order_id": 1005,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 723000,
+      "status": "success",
+      "paid_at": "2026-06-25T10:32:00Z"
+    },
+    {
+      "id": 6,
+      "order_id": 1006,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 323000,
+      "status": "success",
+      "paid_at": "2026-07-04T11:20:00Z"
+    },
+    {
+      "id": 7,
+      "order_id": 1007,
+      "method": "credit_card",
+      "provider": "MASTERCARD",
+      "amount": 4815000,
+      "status": "success",
+      "paid_at": "2026-07-02T09:16:00Z"
+    },
+    {
+      "id": 8,
+      "order_id": 1008,
+      "method": "zalopay",
+      "provider": "ZaloPay",
+      "amount": 902600,
+      "status": "success",
+      "paid_at": "2026-07-03T11:03:00Z"
+    },
+    {
+      "id": 9,
+      "order_id": 1009,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 1010000,
+      "status": "success",
+      "paid_at": "2026-07-08T14:00:00Z"
+    },
+    {
+      "id": 10,
+      "order_id": 1010,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 49990000,
+      "status": "success",
+      "paid_at": "2026-07-06T09:03:00Z"
+    },
+    {
+      "id": 11,
+      "order_id": 1011,
+      "method": "banking",
+      "provider": "Vietcombank",
+      "amount": 23990000,
+      "status": "success",
+      "paid_at": "2026-07-20T10:05:00Z"
+    },
+    {
+      "id": 12,
+      "order_id": 1012,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 1456000,
+      "status": "success",
+      "paid_at": "2026-07-21T12:31:00Z"
+    },
+    {
+      "id": 13,
+      "order_id": 1013,
+      "method": "vnpay",
+      "provider": "VNPAY",
+      "amount": 19020000,
+      "status": "success",
+      "paid_at": "2026-07-22T09:04:00Z"
+    },
+    {
+      "id": 14,
+      "order_id": 1014,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 145900,
+      "status": "pending",
+      "paid_at": null
+    },
+    {
+      "id": 15,
+      "order_id": 1015,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 2460000,
+      "status": "success",
+      "paid_at": "2026-07-23T22:02:00Z"
+    },
+    {
+      "id": 16,
+      "order_id": 1016,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 2410000,
+      "status": "success",
+      "paid_at": "2026-07-24T08:31:00Z"
+    },
+    {
+      "id": 17,
+      "order_id": 1017,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 3715000,
+      "status": "refunded",
+      "paid_at": "2026-07-10T14:02:00Z"
+    },
+    {
+      "id": 18,
+      "order_id": 1018,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 5990000,
+      "status": "success",
+      "paid_at": "2026-07-14T13:30:00Z"
+    },
+    {
+      "id": 19,
+      "order_id": 1019,
+      "method": "zalopay",
+      "provider": "ZaloPay",
+      "amount": 810000,
+      "status": "success",
+      "paid_at": "2026-07-14T15:02:00Z"
+    },
+    {
+      "id": 20,
+      "order_id": 1020,
+      "method": "vnpay",
+      "provider": "VNPAY",
+      "amount": 2063000,
+      "status": "success",
+      "paid_at": "2026-07-16T09:32:00Z"
+    },
+    {
+      "id": 21,
+      "order_id": 1021,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 1215000,
+      "status": "success",
+      "paid_at": "2026-07-21T13:00:00Z"
+    },
+    {
+      "id": 22,
+      "order_id": 1022,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 21490000,
+      "status": "success",
+      "paid_at": "2026-06-30T10:02:00Z"
+    },
+    {
+      "id": 23,
+      "order_id": 1023,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 390000,
+      "status": "success",
+      "paid_at": "2026-07-10T15:30:00Z"
+    },
+    {
+      "id": 24,
+      "order_id": 1024,
+      "method": "banking",
+      "provider": "Techcombank",
+      "amount": 569000,
+      "status": "success",
+      "paid_at": "2026-07-13T09:02:00Z"
+    },
+    {
+      "id": 25,
+      "order_id": 1025,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 395000,
+      "status": "success",
+      "paid_at": "2026-07-18T13:00:00Z"
+    },
+    {
+      "id": 26,
+      "order_id": 1026,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 524100,
+      "status": "success",
+      "paid_at": "2026-07-19T10:02:00Z"
+    },
+    {
+      "id": 27,
+      "order_id": 1027,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 10990000,
+      "status": "success",
+      "paid_at": "2026-06-28T09:03:00Z"
+    },
+    {
+      "id": 28,
+      "order_id": 1028,
+      "method": "banking",
+      "provider": "BIDV",
+      "amount": 52990000,
+      "status": "success",
+      "paid_at": "2026-07-01T09:05:00Z"
+    },
+    {
+      "id": 29,
+      "order_id": 1029,
+      "method": "credit_card",
+      "provider": "VISA",
+      "amount": 6015000,
+      "status": "refunded",
+      "paid_at": "2026-06-18T11:02:00Z"
+    },
+    {
+      "id": 30,
+      "order_id": 1030,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 8990000,
+      "status": "success",
+      "paid_at": "2026-07-14T14:00:00Z"
+    },
+    {
+      "id": 31,
+      "order_id": 1031,
+      "method": "vnpay",
+      "provider": "VNPAY",
+      "amount": 14490000,
+      "status": "success",
+      "paid_at": "2026-06-22T11:02:00Z"
+    },
+    {
+      "id": 32,
+      "order_id": 1032,
+      "method": "credit_card",
+      "provider": "MASTERCARD",
+      "amount": 38990000,
+      "status": "success",
+      "paid_at": "2026-06-12T10:32:00Z"
+    },
+    {
+      "id": 33,
+      "order_id": 1033,
+      "method": "momo",
+      "provider": "MoMo",
+      "amount": 31490000,
+      "status": "success",
+      "paid_at": "2026-06-25T14:02:00Z"
+    },
+    {
+      "id": 34,
+      "order_id": 1034,
+      "method": "cod",
+      "provider": "COD",
+      "amount": 1155000,
+      "status": "pending",
+      "paid_at": null
+    },
+    {
+      "id": 35,
+      "order_id": 1035,
+      "method": "vnpay",
+      "provider": "VNPAY",
+      "amount": 4790000,
+      "status": "pending",
+      "paid_at": null
+    }
+  ],
+  "shipments": [
+    {
+      "id": 1,
+      "order_id": 1001,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026060500001",
+      "status": "delivered",
+      "shipped_at": "2026-06-06T08:00:00Z",
+      "delivered_at": "2026-06-08T14:00:00Z"
+    },
+    {
+      "id": 2,
+      "order_id": 1002,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026061000002",
+      "status": "delivered",
+      "shipped_at": "2026-06-11T09:00:00Z",
+      "delivered_at": "2026-06-12T10:30:00Z"
+    },
+    {
+      "id": 3,
+      "order_id": 1003,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026061500003",
+      "status": "delivered",
+      "shipped_at": "2026-06-16T08:00:00Z",
+      "delivered_at": "2026-06-19T09:00:00Z"
+    },
+    {
+      "id": 4,
+      "order_id": 1004,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026062000004",
+      "status": "delivered",
+      "shipped_at": "2026-06-21T09:00:00Z",
+      "delivered_at": "2026-06-22T15:00:00Z"
+    },
+    {
+      "id": 5,
+      "order_id": 1005,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026062500005",
+      "status": "delivered",
+      "shipped_at": "2026-06-26T08:30:00Z",
+      "delivered_at": "2026-06-28T13:00:00Z"
+    },
+    {
+      "id": 6,
+      "order_id": 1006,
+      "carrier": "J&T Express",
+      "tracking_no": "JT2026070100006",
+      "status": "delivered",
+      "shipped_at": "2026-07-02T09:00:00Z",
+      "delivered_at": "2026-07-04T11:20:00Z"
+    },
+    {
+      "id": 7,
+      "order_id": 1007,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026070200007",
+      "status": "delivered",
+      "shipped_at": "2026-07-03T09:00:00Z",
+      "delivered_at": "2026-07-05T13:00:00Z"
+    },
+    {
+      "id": 8,
+      "order_id": 1008,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026070300008",
+      "status": "delivered",
+      "shipped_at": "2026-07-04T09:00:00Z",
+      "delivered_at": "2026-07-06T10:00:00Z"
+    },
+    {
+      "id": 9,
+      "order_id": 1009,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026070500009",
+      "status": "delivered",
+      "shipped_at": "2026-07-06T08:00:00Z",
+      "delivered_at": "2026-07-08T14:00:00Z"
+    },
+    {
+      "id": 10,
+      "order_id": 1010,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026070600010",
+      "status": "delivered",
+      "shipped_at": "2026-07-07T08:30:00Z",
+      "delivered_at": "2026-07-09T11:30:00Z"
+    },
+    {
+      "id": 11,
+      "order_id": 1011,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026072000011",
+      "status": "shipping",
+      "shipped_at": "2026-07-22T08:00:00Z",
+      "delivered_at": null
+    },
+    {
+      "id": 12,
+      "order_id": 1012,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026072100012",
+      "status": "shipping",
+      "shipped_at": "2026-07-22T10:00:00Z",
+      "delivered_at": null
+    },
+    {
+      "id": 13,
+      "order_id": 1013,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026072200013",
+      "status": "processing",
+      "shipped_at": null,
+      "delivered_at": null
+    },
+    {
+      "id": 14,
+      "order_id": 1015,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026072300015",
+      "status": "processing",
+      "shipped_at": null,
+      "delivered_at": null
+    },
+    {
+      "id": 15,
+      "order_id": 1016,
+      "carrier": "J&T Express",
+      "tracking_no": "JT2026072400016",
+      "status": "processing",
+      "shipped_at": null,
+      "delivered_at": null
+    },
+    {
+      "id": 16,
+      "order_id": 1018,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026071200018",
+      "status": "delivered",
+      "shipped_at": "2026-07-13T08:00:00Z",
+      "delivered_at": "2026-07-14T13:30:00Z"
+    },
+    {
+      "id": 17,
+      "order_id": 1019,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026071400019",
+      "status": "delivered",
+      "shipped_at": "2026-07-15T09:00:00Z",
+      "delivered_at": "2026-07-17T10:00:00Z"
+    },
+    {
+      "id": 18,
+      "order_id": 1020,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026071600020",
+      "status": "delivered",
+      "shipped_at": "2026-07-17T08:30:00Z",
+      "delivered_at": "2026-07-19T11:00:00Z"
+    },
+    {
+      "id": 19,
+      "order_id": 1021,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026071800021",
+      "status": "delivered",
+      "shipped_at": "2026-07-19T09:00:00Z",
+      "delivered_at": "2026-07-21T13:00:00Z"
+    },
+    {
+      "id": 20,
+      "order_id": 1022,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026063000022",
+      "status": "delivered",
+      "shipped_at": "2026-07-01T08:00:00Z",
+      "delivered_at": "2026-07-02T09:00:00Z"
+    },
+    {
+      "id": 21,
+      "order_id": 1023,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026070800023",
+      "status": "delivered",
+      "shipped_at": "2026-07-09T09:00:00Z",
+      "delivered_at": "2026-07-10T15:30:00Z"
+    },
+    {
+      "id": 22,
+      "order_id": 1024,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026071300024",
+      "status": "delivered",
+      "shipped_at": "2026-07-14T09:00:00Z",
+      "delivered_at": "2026-07-16T11:00:00Z"
+    },
+    {
+      "id": 23,
+      "order_id": 1025,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026071500025",
+      "status": "delivered",
+      "shipped_at": "2026-07-16T08:00:00Z",
+      "delivered_at": "2026-07-18T13:00:00Z"
+    },
+    {
+      "id": 24,
+      "order_id": 1026,
+      "carrier": "J&T Express",
+      "tracking_no": "JT2026071900026",
+      "status": "delivered",
+      "shipped_at": "2026-07-20T09:00:00Z",
+      "delivered_at": "2026-07-23T09:00:00Z"
+    },
+    {
+      "id": 25,
+      "order_id": 1027,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026062800027",
+      "status": "delivered",
+      "shipped_at": "2026-06-29T08:00:00Z",
+      "delivered_at": "2026-06-30T13:00:00Z"
+    },
+    {
+      "id": 26,
+      "order_id": 1028,
+      "carrier": "GHTK",
+      "tracking_no": "GHTK2026070100028",
+      "status": "delivered",
+      "shipped_at": "2026-07-02T09:00:00Z",
+      "delivered_at": "2026-07-04T13:30:00Z"
+    },
+    {
+      "id": 27,
+      "order_id": 1029,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026061800029",
+      "status": "returned",
+      "shipped_at": "2026-06-19T08:00:00Z",
+      "delivered_at": "2026-06-21T13:00:00Z"
+    },
+    {
+      "id": 28,
+      "order_id": 1030,
+      "carrier": "Viettel Post",
+      "tracking_no": "VTP2026071100030",
+      "status": "delivered",
+      "shipped_at": "2026-07-12T09:00:00Z",
+      "delivered_at": "2026-07-14T14:00:00Z"
+    },
+    {
+      "id": 29,
+      "order_id": 1031,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026062200031",
+      "status": "delivered",
+      "shipped_at": "2026-06-23T09:00:00Z",
+      "delivered_at": "2026-06-25T09:30:00Z"
+    },
+    {
+      "id": 30,
+      "order_id": 1032,
+      "carrier": "GHN",
+      "tracking_no": "GHN2026061200032",
+      "status": "delivered",
+      "shipped_at": "2026-06-13T09:00:00Z",
+      "delivered_at": "2026-06-15T13:00:00Z"
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "user_id": 5,
+      "order_id": 1004,
+      "rating": 5,
+      "title": "Đỉnh của chóp",
+      "comment": "Camera đẹp, pin trâu, thiết kế titan sang trọng.",
+      "created_at": "2026-06-25T10:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv1a/400",
+        "https://picsum.photos/seed/rv1b/400"
+      ]
+    },
+    {
+      "id": 2,
+      "product_id": 6,
+      "user_id": 2,
+      "order_id": 1001,
+      "rating": 5,
+      "title": "Máy nhẹ, pin xuất sắc",
+      "comment": "Làm việc cả ngày không cần sạc.",
+      "created_at": "2026-06-10T14:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 3,
+      "product_id": 11,
+      "user_id": 3,
+      "order_id": 1002,
+      "rating": 5,
+      "title": "Chống ồn số 1",
+      "comment": "Đeo lên máy bay là im lặng luôn.",
+      "created_at": "2026-06-14T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv3a/400"
+      ]
+    },
+    {
+      "id": 4,
+      "product_id": 13,
+      "user_id": 3,
+      "order_id": 1002,
+      "rating": 5,
+      "title": "Nhỏ mà chất",
+      "comment": "Sạc nhanh MacBook Air ok.",
+      "created_at": "2026-06-14T09:05:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 5,
+      "product_id": 32,
+      "user_id": 4,
+      "order_id": 1003,
+      "rating": 4,
+      "title": "Hình đẹp, âm thanh tạm",
+      "comment": "Chất lượng hình ảnh tốt, âm hơi mỏng.",
+      "created_at": "2026-06-22T20:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 6,
+      "product_id": 25,
+      "user_id": 6,
+      "order_id": 1005,
+      "rating": 5,
+      "title": "Không nhờn",
+      "comment": "Da dầu dùng thấy khô thoáng, ok.",
+      "created_at": "2026-07-01T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv6a/400",
+        "https://picsum.photos/seed/rv6b/400"
+      ]
+    },
+    {
+      "id": 7,
+      "product_id": 34,
+      "user_id": 6,
+      "order_id": 1005,
+      "rating": 4,
+      "title": "Sạch nhẹ",
+      "comment": "Có bọt, mùi trà xanh dịu.",
+      "created_at": "2026-07-01T09:05:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 8,
+      "product_id": 21,
+      "user_id": 7,
+      "order_id": 1006,
+      "rating": 5,
+      "title": "Cuốn hút",
+      "comment": "Sách kinh điển, ai cũng nên đọc.",
+      "created_at": "2026-07-06T11:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 9,
+      "product_id": 33,
+      "user_id": 7,
+      "order_id": 1006,
+      "rating": 5,
+      "title": "Rất hay",
+      "comment": "Nội dung sâu sắc, dịch tốt.",
+      "created_at": "2026-07-06T11:10:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 10,
+      "product_id": 12,
+      "user_id": 8,
+      "order_id": 1007,
+      "rating": 4,
+      "title": "Âm tốt",
+      "comment": "Chống ồn khá, giá hơi cao.",
+      "created_at": "2026-07-07T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 11,
+      "product_id": 15,
+      "user_id": 9,
+      "order_id": 1008,
+      "rating": 5,
+      "title": "Mát và nhẹ",
+      "comment": "Mặc mùa hè cực thích.",
+      "created_at": "2026-07-09T10:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv11a/400"
+      ]
+    },
+    {
+      "id": 12,
+      "product_id": 16,
+      "user_id": 9,
+      "order_id": 1008,
+      "rating": 4,
+      "title": "Vải ổn",
+      "comment": "Form chuẩn Slim, hơi bó bắp chân.",
+      "created_at": "2026-07-09T10:05:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 13,
+      "product_id": 29,
+      "user_id": 10,
+      "order_id": 1009,
+      "rating": 5,
+      "title": "Dung lượng khủng",
+      "comment": "Sạc 4 lần iPhone không hết.",
+      "created_at": "2026-07-10T20:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 14,
+      "product_id": 7,
+      "user_id": 11,
+      "order_id": 1010,
+      "rating": 5,
+      "title": "Chạy Xcode ngon",
+      "comment": "Máy mát, nhanh, thiết kế đẹp.",
+      "created_at": "2026-07-11T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv14a/400",
+        "https://picsum.photos/seed/rv14b/400",
+        "https://picsum.photos/seed/rv14c/400"
+      ]
+    },
+    {
+      "id": 15,
+      "product_id": 10,
+      "user_id": 19,
+      "order_id": 1018,
+      "rating": 5,
+      "title": "Cải thiện đáng kể so với gen 1",
+      "comment": "Chống ồn tốt, USB-C tiện lợi.",
+      "created_at": "2026-07-16T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 16,
+      "product_id": 39,
+      "user_id": 20,
+      "order_id": 1019,
+      "rating": 4,
+      "title": "Pin trâu",
+      "comment": "Đeo 2 tuần chưa sạc, hiển thị đẹp.",
+      "created_at": "2026-07-18T20:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 17,
+      "product_id": 17,
+      "user_id": 21,
+      "order_id": 1020,
+      "rating": 4,
+      "title": "Chất vải mát",
+      "comment": "Dáng suông đẹp, hơi rộng ở vai.",
+      "created_at": "2026-07-20T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv17a/400"
+      ]
+    },
+    {
+      "id": 18,
+      "product_id": 18,
+      "user_id": 21,
+      "order_id": 1020,
+      "rating": 5,
+      "title": "Sang trọng",
+      "comment": "Vải lụa mềm, mặc lên rất lịch sự.",
+      "created_at": "2026-07-20T09:05:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 19,
+      "product_id": 36,
+      "user_id": 21,
+      "order_id": 1020,
+      "rating": 4,
+      "title": "Ấm áp",
+      "comment": "Chất dạ nặng, ấm nhưng khá dày.",
+      "created_at": "2026-07-20T09:10:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 20,
+      "product_id": 35,
+      "user_id": 22,
+      "order_id": 1021,
+      "rating": 5,
+      "title": "Sắc bén",
+      "comment": "Chặt xương thoải mái, tay cầm chắc.",
+      "created_at": "2026-07-22T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv20a/400"
+      ]
+    },
+    {
+      "id": 21,
+      "product_id": 2,
+      "user_id": 1,
+      "order_id": 1022,
+      "rating": 5,
+      "title": "Máy đẹp",
+      "comment": "Màu xanh sang, chụp ảnh nét.",
+      "created_at": "2026-07-03T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 22,
+      "product_id": 19,
+      "user_id": 4,
+      "order_id": 1023,
+      "rating": 5,
+      "title": "Giữ nhiệt tốt",
+      "comment": "Đá lạnh 24h vẫn còn.",
+      "created_at": "2026-07-11T14:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv22a/400"
+      ]
+    },
+    {
+      "id": 23,
+      "product_id": 20,
+      "user_id": 5,
+      "order_id": 1024,
+      "rating": 4,
+      "title": "Tiện lợi",
+      "comment": "3 ngăn tách rời, dùng lò vi sóng ok.",
+      "created_at": "2026-07-17T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 24,
+      "product_id": 23,
+      "user_id": 7,
+      "order_id": 1025,
+      "rating": 5,
+      "title": "Must-read",
+      "comment": "Nên đọc nếu bạn là dev.",
+      "created_at": "2026-07-19T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 25,
+      "product_id": 24,
+      "user_id": 10,
+      "order_id": 1026,
+      "rating": 5,
+      "title": "Da mềm hơn",
+      "comment": "Dùng 2 tuần thấy da sáng mịn hơn.",
+      "created_at": "2026-07-24T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 26,
+      "product_id": 26,
+      "user_id": 13,
+      "order_id": 1027,
+      "rating": 5,
+      "title": "Đồng hồ đáng tiền",
+      "comment": "Nhiều tính năng sức khoẻ.",
+      "created_at": "2026-07-02T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 27,
+      "product_id": 31,
+      "user_id": 14,
+      "order_id": 1028,
+      "rating": 5,
+      "title": "Máy ảnh gọn nhẹ",
+      "comment": "Full-frame mà nhỏ, chất lượng hình đỉnh.",
+      "created_at": "2026-07-06T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv27a/400",
+        "https://picsum.photos/seed/rv27b/400"
+      ]
+    },
+    {
+      "id": 28,
+      "product_id": 40,
+      "user_id": 6,
+      "order_id": 1029,
+      "rating": 2,
+      "title": "Không như quảng cáo",
+      "comment": "Chống ồn kém hơn kỳ vọng, đã trả hàng.",
+      "created_at": "2026-06-24T10:30:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 29,
+      "product_id": 5,
+      "user_id": 8,
+      "order_id": 1030,
+      "rating": 4,
+      "title": "Ok trong tầm giá",
+      "comment": "Màn hình đẹp, camera tạm.",
+      "created_at": "2026-07-16T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 30,
+      "product_id": 4,
+      "user_id": 9,
+      "order_id": 1031,
+      "rating": 4,
+      "title": "Sạc nhanh kinh khủng",
+      "comment": "Camera Leica màu ổn, chip mạnh.",
+      "created_at": "2026-06-27T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 31,
+      "product_id": 8,
+      "user_id": 11,
+      "order_id": 1032,
+      "rating": 4,
+      "title": "Đẹp và nhẹ",
+      "comment": "Bàn phím phẳng hơi khó quen.",
+      "created_at": "2026-06-17T09:00:00Z",
+      "verified_purchase": true,
+      "images": []
+    },
+    {
+      "id": 32,
+      "product_id": 3,
+      "user_id": 12,
+      "order_id": 1033,
+      "rating": 5,
+      "title": "Camera zoom đỉnh",
+      "comment": "S Pen tiện, chụp đêm rất sáng.",
+      "created_at": "2026-06-30T09:00:00Z",
+      "verified_purchase": true,
+      "images": [
+        "https://picsum.photos/seed/rv32a/400",
+        "https://picsum.photos/seed/rv32b/400"
+      ]
+    },
+    {
+      "id": 33,
+      "product_id": 30,
+      "user_id": 18,
+      "order_id": null,
+      "rating": 5,
+      "title": "Sẽ mua tiếp",
+      "comment": "Đã dùng bản trước, chất lượng ổn.",
+      "created_at": "2026-07-20T20:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 34,
+      "product_id": 14,
+      "user_id": 15,
+      "order_id": null,
+      "rating": 5,
+      "title": "Cáp bền",
+      "comment": "Dùng 6 tháng chưa hỏng.",
+      "created_at": "2026-07-19T10:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 35,
+      "product_id": 22,
+      "user_id": 16,
+      "order_id": null,
+      "rating": 5,
+      "title": "Bản in đẹp",
+      "comment": "Giấy dày, chữ rõ.",
+      "created_at": "2026-07-15T14:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 36,
+      "product_id": 9,
+      "user_id": 12,
+      "order_id": null,
+      "rating": 4,
+      "title": "Chơi game ok",
+      "comment": "Máy hơi nóng khi chạy game AAA.",
+      "created_at": "2026-07-14T22:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 37,
+      "product_id": 28,
+      "user_id": 14,
+      "order_id": null,
+      "rating": 5,
+      "title": "Máy tính bảng đáng tiền",
+      "comment": "Vẽ, ghi chú tuyệt vời.",
+      "created_at": "2026-07-12T21:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 38,
+      "product_id": 37,
+      "user_id": 16,
+      "order_id": null,
+      "rating": 4,
+      "title": "Gõ êm",
+      "comment": "Kết nối nhanh với Mac.",
+      "created_at": "2026-07-13T10:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 39,
+      "product_id": 27,
+      "user_id": 1,
+      "order_id": null,
+      "rating": 5,
+      "title": "Bút vẽ chuẩn",
+      "comment": "Vẽ mượt như bút thật.",
+      "created_at": "2026-07-15T14:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 40,
+      "product_id": 38,
+      "user_id": 17,
+      "order_id": null,
+      "rating": 5,
+      "title": "Tốc độ tốt",
+      "comment": "Copy file 4K nhanh, nhỏ gọn.",
+      "created_at": "2026-07-16T11:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 41,
+      "product_id": 1,
+      "user_id": 11,
+      "order_id": null,
+      "rating": 4,
+      "title": "Đẹp nhưng đắt",
+      "comment": "Máy ngon, giá cao.",
+      "created_at": "2026-07-05T20:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 42,
+      "product_id": 11,
+      "user_id": 15,
+      "order_id": null,
+      "rating": 5,
+      "title": "Nghe nhạc thiên đường",
+      "comment": "Bass sâu, treble chi tiết.",
+      "created_at": "2026-07-10T22:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 43,
+      "product_id": 6,
+      "user_id": 20,
+      "order_id": null,
+      "rating": 5,
+      "title": "Học lập trình quá đủ",
+      "comment": "Xử lý VS Code + Docker mượt.",
+      "created_at": "2026-07-12T13:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 44,
+      "product_id": 25,
+      "user_id": 3,
+      "order_id": null,
+      "rating": 4,
+      "title": "Ok",
+      "comment": "Chống nắng ổn, chưa thấy trắng bệch.",
+      "created_at": "2026-07-18T09:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    },
+    {
+      "id": 45,
+      "product_id": 39,
+      "user_id": 8,
+      "order_id": null,
+      "rating": 4,
+      "title": "Đáng tiền trong tầm giá",
+      "comment": "Đo nhịp tim tương đối chính xác.",
+      "created_at": "2026-07-22T14:00:00Z",
+      "verified_purchase": false,
+      "images": []
+    }
+  ],
+  "product_qa": [
+    {
+      "id": 1,
+      "product_id": 1,
+      "user_id": 15,
+      "question": "Máy có bảo hành chính hãng VN/A không?",
+      "answered_by": 24,
+      "answer": "Có bạn nhé, bảo hành 12 tháng chính hãng Apple VN.",
+      "asked_at": "2026-07-10T09:00:00Z",
+      "answered_at": "2026-07-10T10:00:00Z"
+    },
+    {
+      "id": 2,
+      "product_id": 6,
+      "user_id": 20,
+      "question": "Chip M3 8-core hay 10-core vậy shop?",
+      "answered_by": 24,
+      "answer": "Bản này CPU 8-core, GPU 8-core.",
+      "asked_at": "2026-07-12T14:00:00Z",
+      "answered_at": "2026-07-12T15:00:00Z"
+    },
+    {
+      "id": 3,
+      "product_id": 21,
+      "user_id": 8,
+      "question": "Bản dịch nào ạ?",
+      "answered_by": 25,
+      "answer": "Bản Nguyễn Hiến Lê dịch, NXB Trẻ.",
+      "asked_at": "2026-07-15T11:00:00Z",
+      "answered_at": "2026-07-15T13:00:00Z"
+    }
+  ],
+  "return_requests": [
+    {
+      "id": 1,
+      "order_id": 1029,
+      "user_id": 6,
+      "product_id": 40,
+      "reason": "Sản phẩm không đúng mô tả",
+      "status": "approved",
+      "requested_at": "2026-06-22T09:00:00Z",
+      "resolved_at": "2026-06-24T10:00:00Z",
+      "refund_amount": 6015000
+    },
+    {
+      "id": 2,
+      "order_id": 1017,
+      "user_id": 18,
+      "product_id": 27,
+      "reason": "Khách đổi ý trước khi giao",
+      "status": "approved",
+      "requested_at": "2026-07-10T15:00:00Z",
+      "resolved_at": "2026-07-11T09:00:00Z",
+      "refund_amount": 3715000
+    }
+  ],
+  "banners": [
+    {
+      "id": 1,
+      "title": "iPhone 15 series - Trả góp 0%",
+      "image": "https://picsum.photos/seed/banner1/1200/400",
+      "link": "/collections/iphone",
+      "position": "home_hero",
+      "starts_at": "2026-07-01",
+      "expires_at": "2026-08-31",
+      "is_active": true,
+      "image_mobile": "https://picsum.photos/seed/banner1m/600/600"
+    },
+    {
+      "id": 2,
+      "title": "Back to school - Laptop giảm đến 15%",
+      "image": "https://picsum.photos/seed/banner2/1200/400",
+      "link": "/collections/laptop",
+      "position": "home_hero",
+      "starts_at": "2026-07-15",
+      "expires_at": "2026-09-15",
+      "is_active": true,
+      "image_mobile": "https://picsum.photos/seed/banner2m/600/600"
+    },
+    {
+      "id": 3,
+      "title": "Sách hè - mua 3 tặng 1",
+      "image": "https://picsum.photos/seed/banner3/1200/400",
+      "link": "/collections/sach",
+      "position": "home_sub",
+      "starts_at": "2026-06-01",
+      "expires_at": "2026-08-31",
+      "is_active": true,
+      "image_mobile": "https://picsum.photos/seed/banner3m/600/600"
+    },
+    {
+      "id": 4,
+      "title": "Đồ gia dụng Lock&Lock",
+      "image": "https://picsum.photos/seed/banner4/600/300",
+      "link": "/collections/gia-dung",
+      "position": "sidebar",
+      "starts_at": "2026-07-01",
+      "expires_at": "2026-12-31",
+      "is_active": true,
+      "image_mobile": "https://picsum.photos/seed/banner4m/600/600"
+    }
+  ],
+  "shipping_methods": [
+    {
+      "id": 1,
+      "code": "STD",
+      "name": "Giao hàng tiêu chuẩn",
+      "fee": 25000,
+      "eta_days": "2-4",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "code": "EXP",
+      "name": "Giao hàng nhanh",
+      "fee": 45000,
+      "eta_days": "1-2",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "code": "SAME_DAY",
+      "name": "Giao trong ngày (nội thành)",
+      "fee": 60000,
+      "eta_days": "0",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "code": "FREE",
+      "name": "Miễn phí (đơn từ 1 triệu)",
+      "fee": 0,
+      "eta_days": "2-4",
+      "is_active": true
+    }
+  ],
+  "payment_methods": [
+    {
+      "id": 1,
+      "code": "cod",
+      "name": "Thanh toán khi nhận hàng (COD)",
+      "is_active": true
+    },
+    {
+      "id": 2,
+      "code": "credit_card",
+      "name": "Thẻ tín dụng/ghi nợ (Visa, Mastercard, JCB)",
+      "is_active": true
+    },
+    {
+      "id": 3,
+      "code": "momo",
+      "name": "Ví MoMo",
+      "is_active": true
+    },
+    {
+      "id": 4,
+      "code": "zalopay",
+      "name": "ZaloPay",
+      "is_active": true
+    },
+    {
+      "id": 5,
+      "code": "vnpay",
+      "name": "VNPAY-QR",
+      "is_active": true
+    },
+    {
+      "id": 6,
+      "code": "banking",
+      "name": "Chuyển khoản ngân hàng",
+      "is_active": true
+    }
+  ]
+}

@@ -1,6 +1,24 @@
 import './MainHeader.css';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate,  } from 'react-router-dom';
+import { useState } from 'react';
+
+
 const MainHeader = () => {
+  const [keyword, setKeyword] = useState("");
+ 
+
+
+  const navigate = useNavigate();
+  const HandleSubmit = (e) => {
+    e.preventDefault();
+   
+
+    if (keyword.trim() !== "") { 
+    navigate(`/search?keyword=${keyword.trim()}`); 
+  } else {
+    navigate("/search?keyword="); 
+  }
+};
   return (
     <nav className="navbar">
       <div className="navbar__logo">Exclusive</div>
@@ -13,13 +31,19 @@ const MainHeader = () => {
       </ul>
 
       <div className="navbar__actions">
-        <div className="navbar__search">
-          <input type="text" placeholder="What are you looking for?" />
-          <i class="ri-search-line navbar__icon"></i>
-        </div>
+        <form onSubmit={HandleSubmit} className="navbar__search">
+          <input onChange={(e) => setKeyword(e.target.value)} type="text" placeholder="What are you looking for?" />
+          <button type="submit" className="navbar__search-btn">
+            <i className="ri-search-line navbar__icon"></i>
+          </button>
+        </form>
         <div className="navbar__icons_block">
-          <i className="ri-heart-line navbar__icon"></i>
-          <i className="ri-shopping-cart-line navbar__icon"></i>
+          <Link to="/wishlist">
+            <i className="ri-heart-line navbar__icon"></i>
+          </Link>
+          <Link to="/cart">
+            <i className="ri-shopping-cart-line navbar__icon"></i>
+          </Link>
         </div>
 
       </div>
